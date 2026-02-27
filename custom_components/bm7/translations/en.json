@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -configuration of the BM7 monitor",
+                "title": "Re-configuration of the BM7 monitor",
                 "description": "Basic device configuration parameters.",
                 "data": {
                     "state_algorithm": "Battery calculation algorithm",
@@ -161,7 +161,7 @@
                 }
             },
             "state": {
-                "name": "Stan",
+                "name": "State",
                 "state": {
                     "unknown": "Unknown",
                     "ok": "OK",
@@ -195,7 +195,7 @@
                 "name": "Slowness"
             },
             "bluetooth_scanner": {
-                "name": "Skaner Bluetooth"
+                "name": "Bluetooth scanner"
             }
         }
     },
