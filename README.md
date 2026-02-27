@@ -121,9 +121,7 @@ The Battery Monitor BM7 is a device designed to help you keep track of your car 
 
 Battery Monitor BM7 is also available under other names:
 
-- Sealey BT2020 Battery Monitor
-- ANCEL BM200 Car Battery Tester
-- QUICKLYNKS Battery Monitor BM7
+- ANCEL BM300 Pro Car Battery Tester
 
 ## Languages
 
@@ -141,6 +139,8 @@ This project is inspired and based on the hard work of other people and their pu
 - [bm6-battery-monitor](https://github.com/jeffwdh/bm6-battery-monitor)
 - [bm2-battery-monitor](https://github.com/KrystianD/bm2-battery-monitor/blob/master/.docs/reverse_engineering.md)
 - [BM2: Reversing the BLE Protocol of the BM2 Battery Monitor](https://doubleagent.net/bm2-reversing-the-ble-protocol-of-the-bm2-battery-monitor/)
+- [BM6 fork with en translation fixes from bsrotten](https://github.com/bsrotten/BM6)
+- [BM7 Keys from slydiman](https://github.com/slydiman/bm7-battery-monitor)
 
 ## Batteries information
 
