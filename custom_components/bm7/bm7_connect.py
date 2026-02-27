@@ -118,7 +118,7 @@ class BM7Connector:
         hass: HomeAssistant,
         address: str
     ):
-        """Initialize the BM7Connector with either a HASS or a BLEDevice."""
+        """Initialize the BM7Connector with either a HASS or a BLE Device."""
         self.hass = hass
         self._address: str = address
         self._scanners: list[BluetoothScannerDevice] = None
