@@ -13,10 +13,10 @@ This custom component for [Home Assistant](https://www.home-assistant.io) to rea
 
 <table width="100%" style="border: none;">
     <tr>
-        <td><img src="https://github.com/Rafciq/BM7/blob/59d07c0c791f349ccf2342f3340860cabc7606dc/images/icon.png" alt="Icon"></td>
+        <td><img src="https://github.com/derekpurdy/BM7/blob/main/images/icon.png?raw=true" alt="Icon"></td>
         <td valign="top">This is an integration that allows you to observe BM7 parameters on the Home Assistant platform. BM7 is monitored via a Bluetooth gateway, and its parameters such as temperature, voltage, percent, state are saved as entities by the HA platform.<br><br>
         This integration allows you to add any number of such devices.
-        <td><img src="https://github.com/Rafciq/BM7/blob/59d07c0c791f349ccf2342f3340860cabc7606dc/images/bm7_device.png" alt="BM7" width="70%" height="70%"></td>
+        <td><img src="https://github.com/derekpurdy/BM7/blob/main/images/bm7_device.png?raw=true" alt="BM7" width="70%" height="70%"></td>
     </tr>
 </table>
 
@@ -56,6 +56,7 @@ In the configuration process, you need to provide some information. This include
 #### Algorithms of battery status
 
 To calculate percentage of battery power and actual state, integration use algorithm configured by user.
+
 - Calculated by BM7 Device (integration get information from BM7 device)
 - Calculated using State of Charge/Discharge (SoC/SoD)
 - Calculated using Charge/Discharge Voltage Range (CVR/DVR)
@@ -63,6 +64,7 @@ To calculate percentage of battery power and actual state, integration use algor
 #### States of battery
 
 Each BM7 device have one calculated sensor presents actual battery state. It can take one of these values. Availability of this states is depending of used algorithms.
+
 | State name    | From BM7 | Calculated | Description                                                                 |
 |---------------|:--------:|:----------:|-----------------------------------------------------------------------------|
 | Ok            |    X     |            | Battery state Ok (1)                                                        |
@@ -91,6 +93,7 @@ Each BM7 device have one calculated sensor presents actual battery state. It can
 ## Triggers
 
 Triggers availability is depending on choose algorithm at configuration time. Their behavior corresponds to the change of the value 'State' sensor.
+
 | Name                      | From BM7 | Calculated |
 |---------------------------|:--------:|:----------:|
 | Started OK state          |    X     |            |
@@ -109,6 +112,7 @@ Triggers availability is depending on choose algorithm at configuration time. Th
 ## Device Hardware BM7
 
 The Battery Monitor BM7 is a device designed to help you keep track of your car battery's health and performance. Here are some key features:
+
 - **Real-time Voltage Monitoring**: It allows you to monitor the voltage of your car battery in real-time.
 - **Battery Testing**: You can test the starting and charging system voltage to ensure your battery is functioning properly.
 - **Data Logging**: The device can accurately record the time of car starting and stopping, and all data can be displayed on your mobile phone via Bluetooth.
@@ -116,6 +120,7 @@ The Battery Monitor BM7 is a device designed to help you keep track of your car 
 - **Bluetooth Connectivity**: It connects to your smartphone via Bluetooth, allowing you to monitor your battery's health and performance in real-time.
 
 Battery Monitor BM7 is also available under other names:
+
 - Sealey BT2020 Battery Monitor
 - ANCEL BM200 Car Battery Tester
 - QUICKLYNKS Battery Monitor BM7
@@ -131,79 +136,80 @@ If you would like to correct any of them, please create an [issue](https://githu
 # Thanks
 
 This project is inspired and based on the hard work of other people and their publications:
+
 - [Reverse Engineering the BM7 BLE Battery Monitor](https://www.tarball.ca/posts/reverse-engineering-the-bm6-ble-battery-monitor/)
 - [bm6-battery-monitor](https://github.com/jeffwdh/bm6-battery-monitor)
 - [bm2-battery-monitor](https://github.com/KrystianD/bm2-battery-monitor/blob/master/.docs/reverse_engineering.md)
 - [BM2: Reversing the BLE Protocol of the BM2 Battery Monitor](https://doubleagent.net/bm2-reversing-the-ble-protocol-of-the-bm2-battery-monitor/)
 
-# Batteries information
+## Batteries information
 
-## Types of batteries:
+### Types of batteries
 
-### Lead-Acid Batteries:
+#### Lead-Acid Batteries
 
-#### Flooded Lead-Acid Battery: FLA
+##### Flooded Lead-Acid Battery: FLA
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 6V           | 5.8-6.3V    | 6.8-7.2V    | 5.8-6.0V    | 6.0-6.3V    |
 | 12V          | 10.5-12.7V  | 13.8-14.4V  | 10.5-12.0V  | 12.0-12.7V  |
 
-#### Sealed Lead-Acid Battery (VRLA):
+##### Sealed Lead-Acid Battery (VRLA)
 
-##### Absorbent Glass Mat: AGM
+###### Absorbent Glass Mat: AGM
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 6V           | 5.8-6.3V    | 6.8-7.2V    | 5.8-6.0V    | 6.0-6.3V    |
 | 12V          | 10.5-12.6V  | 14.4-14.7V  | 10.5-12.0V  | 12.0-12.6V  |
 
-##### Gel Cell: Gel
+###### Gel Cell: Gel
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 6V           | 5.8-6.3V    | 6.8-7.2V    | 5.8-6.0V    | 6.0-6.3V    |
 | 12V          | 10.5-12.6V  | 13.8-14.4V  | 10.5-12.0V  | 12.0-12.6V  |
 
-### Nickel-Based Batteries
+#### Nickel-Based Batteries
 
-#### Nickel-Cadmium: NiCd
-
-| Battery Type | DVR         | CVR         | SoD         | SoC         |
-|--------------|-------------|-------------|-------------|-------------|
-| 6V           | 5.4-6.0V    | 6.8-7.2V    | 5.4-5.8V    | 5.8-6.0V    |
-| 12V          | 10.8-12.0V  | 13.6-14.4V  | 10.8-11.5V  | 11.5-12.0V  |
-
-#### Nickel-Metal Hydride: NiMH
+##### Nickel-Cadmium: NiCd
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 6V           | 5.4-6.0V    | 6.8-7.2V    | 5.4-5.8V    | 5.8-6.0V    |
 | 12V          | 10.8-12.0V  | 13.6-14.4V  | 10.8-11.5V  | 11.5-12.0V  |
 
-### Lithium-Based Batteries
+##### Nickel-Metal Hydride: NiMH
 
-#### Lithium-Ion: Li-Ion
+| Battery Type | DVR         | CVR         | SoD         | SoC         |
+|--------------|-------------|-------------|-------------|-------------|
+| 6V           | 5.4-6.0V    | 6.8-7.2V    | 5.4-5.8V    | 5.8-6.0V    |
+| 12V          | 10.8-12.0V  | 13.6-14.4V  | 10.8-11.5V  | 11.5-12.0V  |
+
+#### Lithium-Based Batteries
+
+##### Lithium-Ion: Li-Ion
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 6V           | 6.0-7.2V    | 7.0-7.2V    | 6.0-6.5V    | 6.5-7.2V    |
 | 12V          | 10.0-13.5V  | 14.4-14.6V  | 10.0-12.0V  | 12.0-13.5V  |
 
-#### Lithium Iron Phosphate: LiFePO4
+##### Lithium Iron Phosphate: LiFePO4
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 12V          | 12.0-13.5V  | 14.6-15.0V  | 12.0-13.0V  | 13.0-13.5V  |
 
-#### Lithium Titanate: LTO
+##### Lithium Titanate: LTO
 
 | Battery Type | DVR         | CVR         | SoD         | SoC         |
 |--------------|-------------|-------------|-------------|-------------|
 | 6V           | 5.4-6.6V    | 6.0-6.6V    | 5.4-6.0V    | 6.0-6.6V    |
 | 12V          | 10.8-13.2V  | 12.0-13.2V  | 10.8-12.0V  | 12.0-13.2V  |
 
-## Shortcuts of battery process states:
+## Shortcuts of battery process states
 
 - DVR = Discharging Voltage Range
 - CVR = Charging Voltage Range
