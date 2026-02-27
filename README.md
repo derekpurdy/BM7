@@ -7,7 +7,7 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=flat-square)](https://github.com/hacs)
 ![GitHub Repo stars](https://img.shields.io/github/stars/derekpurdy/BM7)
 
-This custom component for [Home Assistant](https://www.home-assistant.io) to reads BLE Car Battery Monitor BM7.
+This custom component for [Home Assistant](https://www.home-assistant.io) to reads BLE Battery Monitor BM7 (BM300 Pro).
 
 ## About
 
