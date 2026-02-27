@@ -118,13 +118,13 @@
                 }
             },
             "percentage": {
-                "name": "Percent",
+                "name": "Battery Level",
                 "state_attributes": {
                     "voltage_corrected": {
                         "name": "Corrected voltage"
                     },
                     "percentage": {
-                        "name": "Battery Level"
+                        "name": "Percent"
                     },
                     "state_algorithm": {
                         "name": "Battery calculation algorithm",
