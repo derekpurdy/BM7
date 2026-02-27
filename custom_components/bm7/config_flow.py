@@ -29,12 +29,15 @@ from home_assistant_bluetooth import BluetoothServiceInfoBleak
 
 from .const import (
     CONF_BLUETOOTH_SCANNER,
+    CONF_DEVICE_TYPE,
     CONF_TEMPERATURE_OFFSET,
     CONF_TEMPERATURE_UNIT,
     CONF_VOLTAGE_OFFSET,
     DEFAULT_TEMPERATURE_OFFSET,
     DEFAULT_TEMPERATURE_UNIT,
     DEFAULT_VOLTAGE_OFFSET,
+    DEVICE_TYPE_BM6,
+    DEVICE_TYPE_BM7,
     DOMAIN,
     CONF_DEVICE_ADDRESS,
     CONF_CUSTOM_DVR_MIN,
@@ -130,6 +133,10 @@ async def build_schema(
                     CONF_TEMPERATURE_UNIT,
                     default=data.get(CONF_TEMPERATURE_UNIT, DEFAULT_TEMPERATURE_UNIT),
                 ): vol.In([UnitOfTemperature.CELSIUS, UnitOfTemperature.FAHRENHEIT]),
+                vol.Required(
+                    CONF_DEVICE_TYPE,
+                    default=DEVICE_TYPE_BM7
+                ): vol.In([DEVICE_TYPE_BM6, DEVICE_TYPE_BM7]),
                 # vol.Required(
                 #     CONF_BLUETOOTH_GATEWAY,
                 #     default=data.get(CONF_BLUETOOTH_GATEWAY, gateway_choices),

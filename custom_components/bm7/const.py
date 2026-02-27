@@ -31,6 +31,17 @@ GATT_NOTIFY_VERSION_PREFIX = "d15501"
 CRYPT_KEY = bytearray(
     [108, 101, 97, 103, 101, 110, 100, 255, 254, 48, 49, 48, 48, 48, 48, 64]
 )
+
+DEVICE_TYPE_BM6 = "BM6" # Also support BM200
+DEVICE_TYPE_BM7 = "BM7" # Also support BM300 Pro
+
+CONF_DEVICE_TYPE = "device_type"
+
+DEVICE_AES_KEYS = {
+    DEVICE_TYPE_BM6: bytes([108, 101, 97, 103, 101, 110, 100, 255, 254, 48, 49, 48, 48, 48, 48, 64]),
+    DEVICE_TYPE_BM7: bytes([108, 101, 97, 103, 101, 110, 100, 255, 254, 48, 49, 48, 48, 48, 48, 64]),
+}
+
 # Timeout for the Bleak client
 BLEAK_CLIENT_TIMEOUT = 10  # Timeout
 

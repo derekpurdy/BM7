@@ -18,9 +18,11 @@ from .const import (
     CONF_TEMPERATURE_UNIT,
     DOMAIN,
     CONF_DEVICE_ADDRESS,
+    CONF_DEVICE_TYPE,
     CONF_UPDATE_INTERVAL,
     CONF_VOLTAGE_OFFSET,
     CONF_TEMPERATURE_OFFSET,
+    DEVICE_TYPE_BM7,
     KEY_BLUETOOTH_SCANNER,
     KEY_CVR_MAX,
     KEY_CVR_MIN,
@@ -70,8 +72,11 @@ class BM7DataUpdateCoordinator(DataUpdateCoordinator):
     async def _async_update_data(self) -> dict:
         """Fetch data from the BM7 device."""
         try:
+            device_type = self.config_entry.data.get(CONF_DEVICE_TYPE, DEVICE_TYPE_BM7)
             connector: BM7Connector = BM7Connector(
-                hass=self.hass, address=self.device_address
+                hass=self.hass,
+                address=self.device_address,
+                device_type=device_type
             )
             data: BM7Data = await connector.get_data()
             voltage_corrected = (

@@ -20,6 +20,8 @@ from .const import (
     CHARACTERISTIC_UUID_NOTIFY,
     CHARACTERISTIC_UUID_WRITE,
     CRYPT_KEY,
+    DEVICE_AES_KEYS,
+    DEVICE_TYPE_BM7,
     BLEAK_CLIENT_TIMEOUT,
     GATT_DATA_REALTIME,
     GATT_DATA_VERSION,
@@ -116,11 +118,14 @@ class BM7Connector:
     def __init__(
         self,
         hass: HomeAssistant,
-        address: str
+        address: str,
+        device_type: str = DEVICE_TYPE_BM7,
     ):
         """Initialize the BM7Connector with either a HASS or a BLE Device."""
         self.hass = hass
         self._address: str = address
+        self._device_type: str = device_type
+        self._crypt_key = DEVICE_AES_KEYS[device_type]
         self._scanners: list[BluetoothScannerDevice] = None
         self._data: BM7Data = None
         _LOGGER.debug("Get device BM7 at %s from HASS", self._address)
@@ -144,13 +149,11 @@ class BM7Connector:
         )
 
     def _decrypt(self, data: bytearray) -> bytearray:
-        """Decrypt the received data using AES."""
-        cipher = AES.new(CRYPT_KEY, AES.MODE_CBC, 16 * b"\0")
+        cipher = AES.new(self._crypt_key, AES.MODE_CBC, 16 * b"\0")
         return cipher.decrypt(data)
 
     def _encrypt(self, data: bytearray) -> bytearray:
-        """Encrypt the data to be sent using AES."""
-        cipher = AES.new(CRYPT_KEY, AES.MODE_CBC, 16 * b"\0")
+        cipher = AES.new(self._crypt_key, AES.MODE_CBC, 16 * b"\0")
         return cipher.encrypt(data)
 
     async def _notify_callback(
