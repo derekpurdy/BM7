@@ -9,8 +9,8 @@
                     "device_address": "Name/address BM7",
                     "state_algorithm": "Battery calculation algorithm",
                     "update_interval": "Data update interval",
-                    "voltage_offset": "Voltage correction",
-                    "temperature_offset": "Temperature correction",
+                    "voltage_offset": "Voltage offset",
+                    "temperature_offset": "Temperature offset",
                     "temperature_unit": "Temperature unit"
                 }
             },
@@ -185,7 +185,7 @@
                     "unknown": "Unknown",
                     "ok": "OK",
                     "low_voltage": "Low voltage",
-                    "charging": "Landing"
+                    "charging": "Charging"
                 }
             },
             "rapid_acceleration": {
@@ -216,7 +216,7 @@
                 "liion": "Lithium-ion (Li-ion)",
                 "lifepo4": "Lithium iron phosphate (Lifepo4)",
                 "lto": "Little Titanian (LTO)",
-                "custom": "Non -standard battery"
+                "custom": "Non-standard battery"
             }
         },
         "battery_state_algorithm": {
@@ -231,11 +231,11 @@
                 "unknown": "Unknown",
                 "ok": "OK",
                 "low_voltage": "Low voltage",
-                "under_voltage": "Too low voltage",
-                "charging": "Landing",
+                "under_voltage": "Under voltage",
+                "charging": "Charging",
                 "idle": "Idle",
-                "discharging": "Unloading",
-                "over_voltage": "Too high voltage"
+                "discharging": "Discharging",
+                "over_voltage": "Over voltage"
             }
         }
     },
@@ -243,11 +243,11 @@
         "trigger_type": {
             "start_ok": "OK's condition began",
             "start_low_voltage": "Low voltage has begun",
-            "under_voltage": "Too low voltage",
-            "start_discharging": "Unloading has begun",
+            "under_voltage": "Under voltage",
+            "start_discharging": "Discharging has begun",
             "start_idle": "The idle mode has begun",
             "start_charging": "Charging began",
-            "over_voltage": "Too high voltage",
+            "over_voltage": "Over voltage",
             "state_changed": "The state has changed"
         }
     }
