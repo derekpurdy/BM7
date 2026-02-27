@@ -1,4 +1,4 @@
-"""Sensor platform for BM6 integration."""
+"""Sensor platform for BM7 integration."""
 
 # TODO: Acceleration and deceleration sensors are not implemented yet.
 
@@ -58,44 +58,44 @@ from .const import (
     TRANSLATION_KEY_RAPID_ACCELERATION,
     TRANSLATION_KEY_RAPID_DECELERATION,
 )
-from .bm6_connect import BM6RealTimeState
+from .bm7_connect import BM7RealTimeState
 from .battery import Battery, BatteryState
 
 if TYPE_CHECKING:
-    from . import BM6ConfigEntry
-    from .coordinator import BM6DataUpdateCoordinator
+    from . import BM7ConfigEntry
+    from .coordinator import BM7DataUpdateCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(
     hass: HomeAssistant,
-    config_entry: BM6ConfigEntry,
+    config_entry: BM7ConfigEntry,
     async_add_entities: AddEntitiesCallback,
 ) -> None:
-    """Set up BM6 sensors based on a config entry."""
+    """Set up BM7 sensors based on a config entry."""
     coordinator = config_entry.runtime_data.coordinator
     await coordinator.async_refresh()
 
     entities = [
-        BM6VoltageSensor(coordinator),
-        BM6TemperatureSensor(coordinator),
-        BM6PercentageSensor(coordinator),
-        BM6StateSensor(coordinator),
-        BM6RssiSensor(coordinator),
-        BM6DevicePercentageSensor(coordinator),
-        BM6DeviceStateSensor(coordinator),
-        BM6RapidAccelerationSensor(coordinator),
-        BM6RapidDecelerationSensor(coordinator),
-        BM6BluetoothScannerSensor(coordinator),
+        BM7VoltageSensor(coordinator),
+        BM7TemperatureSensor(coordinator),
+        BM7PercentageSensor(coordinator),
+        BM7StateSensor(coordinator),
+        BM7RssiSensor(coordinator),
+        BM7DevicePercentageSensor(coordinator),
+        BM7DeviceStateSensor(coordinator),
+        BM7RapidAccelerationSensor(coordinator),
+        BM7RapidDecelerationSensor(coordinator),
+        BM7BluetoothScannerSensor(coordinator),
     ]
     async_add_entities(entities)
 
 
-class BM6SensorEntity(CoordinatorEntity, SensorEntity):
-    """Base class for BM6 sensor entities."""
+class BM7SensorEntity(CoordinatorEntity, SensorEntity):
+    """Base class for BM7 sensor entities."""
 
-    def __init__(self, coordinator: BM6DataUpdateCoordinator) -> None:
+    def __init__(self, coordinator: BM7DataUpdateCoordinator) -> None:
         """Initialize the sensor."""
         super().__init__(coordinator)
         self._attr_extra_state_attributes = {}
@@ -106,9 +106,9 @@ class BM6SensorEntity(CoordinatorEntity, SensorEntity):
         """Return device information."""
         return DeviceInfo(
             identifiers={(DOMAIN, self._device_address)},
-            name=f"BM6 {self._device_address}",
-            manufacturer="BM6",
-            model="Battery Monitor BM6",
+            name=f"BM7 {self._device_address}",
+            manufacturer="BM7",
+            model="Battery Monitor BM7",
         )
 
     @property
@@ -118,7 +118,7 @@ class BM6SensorEntity(CoordinatorEntity, SensorEntity):
 
 
 @final
-class BM6VoltageSensor(BM6SensorEntity):
+class BM7VoltageSensor(BM7SensorEntity):
     """Voltage sensor."""
 
     _attr_has_entity_name = True
@@ -150,7 +150,7 @@ class BM6VoltageSensor(BM6SensorEntity):
 
 
 @final
-class BM6TemperatureSensor(BM6SensorEntity):
+class BM7TemperatureSensor(BM7SensorEntity):
     """Temperature sensor."""
 
     _attr_has_entity_name = True
@@ -191,7 +191,7 @@ class BM6TemperatureSensor(BM6SensorEntity):
 
 
 @final
-class BM6PercentageSensor(BM6SensorEntity):
+class BM7PercentageSensor(BM7SensorEntity):
     """Percentage sensor."""
 
     _attr_has_entity_name = True
@@ -230,7 +230,7 @@ class BM6PercentageSensor(BM6SensorEntity):
 
 
 @final
-class BM6StateSensor(BM6SensorEntity):
+class BM7StateSensor(BM7SensorEntity):
     """State sensor."""
 
     _attr_has_entity_name = True
@@ -267,7 +267,7 @@ class BM6StateSensor(BM6SensorEntity):
 
 
 @final
-class BM6RssiSensor(BM6SensorEntity):
+class BM7RssiSensor(BM7SensorEntity):
     """Signal Strength RSSI sensor."""
 
     _attr_has_entity_name = True
@@ -286,7 +286,7 @@ class BM6RssiSensor(BM6SensorEntity):
 
 
 @final
-class BM6DevicePercentageSensor(BM6SensorEntity):
+class BM7DevicePercentageSensor(BM7SensorEntity):
     """Device Percentage sensor."""
 
     _attr_has_entity_name = True
@@ -309,7 +309,7 @@ class BM6DevicePercentageSensor(BM6SensorEntity):
 
 
 @final
-class BM6DeviceStateSensor(BM6SensorEntity):
+class BM7DeviceStateSensor(BM7SensorEntity):
     """Device State sensor."""
 
     _attr_has_entity_name = True
@@ -327,12 +327,12 @@ class BM6DeviceStateSensor(BM6SensorEntity):
     def state(self) -> str:
         if self.native_value is not None:
             try:
-                device_state: BM6RealTimeState = BM6RealTimeState(self.native_value)
-                if device_state == BM6RealTimeState.BatteryOk:
+                device_state: BM7RealTimeState = BM7RealTimeState(self.native_value)
+                if device_state == BM7RealTimeState.BatteryOk:
                     return BatteryState.Ok.value
-                elif device_state == BM6RealTimeState.LowVoltage:
+                elif device_state == BM7RealTimeState.LowVoltage:
                     return BatteryState.LowVoltage.value
-                elif device_state == BM6RealTimeState.Charging:
+                elif device_state == BM7RealTimeState.Charging:
                     return BatteryState.Charging.value
                 elif isinstance(device_state, int):
                     return str(device_state)
@@ -345,12 +345,12 @@ class BM6DeviceStateSensor(BM6SensorEntity):
     def icon(self) -> str:
         if self.native_value is not None:
             try:
-                device_state: BM6RealTimeState = BM6RealTimeState(self.native_value)
-                if device_state == BM6RealTimeState.BatteryOk:
+                device_state: BM7RealTimeState = BM7RealTimeState(self.native_value)
+                if device_state == BM7RealTimeState.BatteryOk:
                     return "mdi:battery-check"
-                elif device_state == BM6RealTimeState.LowVoltage:
+                elif device_state == BM7RealTimeState.LowVoltage:
                     return "mdi:alert-octagon"
-                elif device_state == BM6RealTimeState.Charging:
+                elif device_state == BM7RealTimeState.Charging:
                     return "mdi:battery-charging"
             except ValueError:
                 pass
@@ -358,7 +358,7 @@ class BM6DeviceStateSensor(BM6SensorEntity):
 
 
 @final
-class BM6BluetoothScannerSensor(BM6SensorEntity):
+class BM7BluetoothScannerSensor(BM7SensorEntity):
     """Bluetooth Scanner sensor."""
 
     _attr_has_entity_name = True
@@ -375,7 +375,7 @@ class BM6BluetoothScannerSensor(BM6SensorEntity):
 
 
 @final
-class BM6RapidAccelerationSensor(BM6SensorEntity):
+class BM7RapidAccelerationSensor(BM7SensorEntity):
     """Rapid Acceleration sensor."""
 
     _attr_has_entity_name = True
@@ -394,7 +394,7 @@ class BM6RapidAccelerationSensor(BM6SensorEntity):
 
 
 @final
-class BM6RapidDecelerationSensor(BM6SensorEntity):
+class BM7RapidDecelerationSensor(BM7SensorEntity):
     """Rapid Deceleration sensor."""
 
     _attr_has_entity_name = True

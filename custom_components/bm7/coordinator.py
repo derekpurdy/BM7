@@ -1,5 +1,5 @@
 """
-This module contains the BM6DataUpdateCoordinator class, which manages fetching data from the BM6 device.
+This module contains the BM7DataUpdateCoordinator class, which manages fetching data from the BM7 device.
 """
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 
 from .utils import convert_temperature
 from .battery import Battery
-from .bm6_connect import BM6Connector, BM6Data, BM6DeviceError
+from .bm7_connect import BM7Connector, BM7Data, BM7DeviceError
 from .const import (
     CONF_TEMPERATURE_UNIT,
     DOMAIN,
@@ -46,15 +46,15 @@ from .const import (
 )
 
 if TYPE_CHECKING:
-    from . import BM6ConfigEntry
+    from . import BM7ConfigEntry
 
 _LOGGER = logging.getLogger(__name__)
 
 
-class BM6DataUpdateCoordinator(DataUpdateCoordinator):
-    """Class to manage fetching data from the BM6 device."""
+class BM7DataUpdateCoordinator(DataUpdateCoordinator):
+    """Class to manage fetching data from the BM7 device."""
 
-    def __init__(self, hass: HomeAssistant, config_entry: BM6ConfigEntry) -> None:
+    def __init__(self, hass: HomeAssistant, config_entry: BM7ConfigEntry) -> None:
         """Initialize the coordinator."""
         self.hass = hass
         self.config_entry = config_entry
@@ -68,12 +68,12 @@ class BM6DataUpdateCoordinator(DataUpdateCoordinator):
         )
 
     async def _async_update_data(self) -> dict:
-        """Fetch data from the BM6 device."""
+        """Fetch data from the BM7 device."""
         try:
-            connector: BM6Connector = BM6Connector(
+            connector: BM7Connector = BM7Connector(
                 hass=self.hass, address=self.device_address
             )
-            data: BM6Data = await connector.get_data()
+            data: BM7Data = await connector.get_data()
             voltage_corrected = (
                 data.RealTime.Voltage + self.config_entry.data[CONF_VOLTAGE_OFFSET]
             )
@@ -107,17 +107,17 @@ class BM6DataUpdateCoordinator(DataUpdateCoordinator):
                 KEY_RAPID_DECELERATION: data.RealTime.RapidDeceleration,
                 KEY_BLUETOOTH_SCANNER: data.Advertisement.Scanner,
             }
-        except BM6DeviceError as e:
-            _LOGGER.error("BM6 device error at %s: %s", self.device_address, e)
-            raise UpdateFailed(f"BM6 device error: {e}") from e
+        except BM7DeviceError as e:
+            _LOGGER.error("BM7 device error at %s: %s", self.device_address, e)
+            raise UpdateFailed(f"BM7 device error: {e}") from e
         except Exception as e:
             _LOGGER.error(
-                "Unexpected error while reading BM6 at %s: %s", self.device_address, e
+                "Unexpected error while reading BM7 at %s: %s", self.device_address, e
             )
             raise UpdateFailed(f"Unexpected error: {e}") from e
 
     def get_diagnostic_data(self) -> dict:
-        """Return diagnostic data for the BM6 device."""
+        """Return diagnostic data for the BM7 device."""
         return {
             "device_address": self.device_address,
             "battery": self._battery.get_diagnostic_data(),

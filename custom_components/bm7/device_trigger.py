@@ -1,4 +1,4 @@
-"""Provides device triggers for BM6 devices."""
+"""Provides device triggers for BM7 devices."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ _LOGGER = logging.getLogger(__name__)
 
 @dataclass
 class TriggerConfig:
-    """BM6 trigger configuration."""
+    """BM7 trigger configuration."""
 
     battery_state: BatteryState
     battery_state_alg: list[BatteryStateAlgorithm]
@@ -131,7 +131,7 @@ TRIGGER_SCHEMA = DEVICE_TRIGGER_BASE_SCHEMA.extend(
 async def async_get_triggers(
     hass: HomeAssistant, device_id: str
 ) -> list[dict[str, Any]]:
-    """List device triggers for BM6 devices."""
+    """List device triggers for BM7 devices."""
     try:
         _LOGGER.debug("Getting triggers for device %s", device_id)
         triggers = []

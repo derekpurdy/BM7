@@ -1,35 +1,35 @@
-"""Constants for the BM6 integration."""
+"""Constants for the BM7 integration."""
 
 from __future__ import annotations
 
 from homeassistant.const import Platform, UnitOfTemperature
 
-NAME = "Battery Monitor BM6"
-DOMAIN = "bm6"
+NAME = "Battery Monitor BM7"
+DOMAIN = "bm7"
 VERSION = "1.0.3"
 MIN_REQUIRED_HA_VERSION = "2025.1.1"
 
 COMPONENT = "component"
 PLATFORMS: set[Platform] = {Platform.SENSOR}
 
-# BM6 Bluetooth Device parameters
-# Characteristic UUIDs for the BM6 device
+# BM7 Bluetooth Device parameters
+# Characteristic UUIDs for the BM7 device
 CHARACTERISTIC_UUID_WRITE = "FFF3"
-# Characteristic UUID for notifications from the BM6 device
+# Characteristic UUID for notifications from the BM7 device
 CHARACTERISTIC_UUID_NOTIFY = "FFF4"
-# GATT Command to get real time data from the BM6 device
+# GATT Command to get real time data from the BM7 device
 GATT_DATA_REALTIME = "d1550700000000000000000000000000"
-# GATT Notify incoming real time data prefix from the BM6 device
+# GATT Notify incoming real time data prefix from the BM7 device
 GATT_NOTIFY_REALTIME_PREFIX = "d15507"
-# GATT Command to get version info from the BM6 device
+# GATT Command to get version info from the BM7 device
 GATT_DATA_VERSION = "d1550100000000000000000000000000"
-# GATT Notify incoming version info prefix from the BM6 device
+# GATT Notify incoming version info prefix from the BM7 device
 GATT_NOTIFY_VERSION_PREFIX = "d15501"
 
 
-# Encryption key for the BM6 device
+# Encryption key for the BM7 device
 CRYPT_KEY = bytearray(
-    [108, 101, 97, 103, 101, 110, 100, 255, 254, 48, 49, 48, 48, 48, 48, 57]
+    [108, 101, 97, 103, 101, 110, 100, 255, 254, 48, 49, 48, 48, 48, 48, 64]
 )
 # Timeout for the Bleak client
 BLEAK_CLIENT_TIMEOUT = 10  # Timeout

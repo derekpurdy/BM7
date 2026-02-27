@@ -1,7 +1,7 @@
 """
-Config flow for BM6 integration.
+Config flow for BM7 integration.
 
-This module handles the configuration flow for the BM6 integration,
+This module handles the configuration flow for the BM7 integration,
 including loading Bluetooth configuration, discovering devices, and
 validating user input.
 """
@@ -69,7 +69,7 @@ from .battery import (
 
 
 if TYPE_CHECKING:
-    from . import BM6ConfigEntry
+    from . import BM7ConfigEntry
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -80,7 +80,7 @@ DEFAULT_STATE_ALGORITHM = BatteryStateAlgorithm.SoC_SoD
 
 
 class ConfigPage(Enum):
-    """Config page for BM6 config flow."""
+    """Config page for BM7 config flow."""
 
     MAIN = "main"
     CUSTOM_CALCULATION = "custom_calculation"
@@ -233,8 +233,8 @@ def validate_custom_voltage(
     return errors
 
 
-class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for BM6."""
+class BM7ConfigFlow(ConfigFlow, domain=DOMAIN):
+    """Handle a config flow for BM7."""
 
     VERSION = 1
 
@@ -245,8 +245,8 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
 
     def _get_name(self, service_info: BluetoothServiceInfoBleak) -> str:
         """Get the name of the device."""
-        return f"{service_info.name} {service_info.address}" if service_info.name else f"BM6 {service_info.address}"
-    
+        return f"{service_info.name} {service_info.address}" if service_info.name else f"BM7 {service_info.address}"
+
     async def bluetooth_config(self) -> dict[str, Any]:
         """Return the loaded Bluetooth configuration."""
         if self._bluetooth_config:
@@ -300,7 +300,7 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
                     devices[service_info.address] = self._get_name(service_info)
                     valid_devices += f"\n{self.format_device_info(service_info)}"
         _LOGGER.debug("All Bluetooth devices:\n%s", all_devices)
-        _LOGGER.info("BM6 Bluetooth devices:\n%s", valid_devices)
+        _LOGGER.info("BM7 Bluetooth devices:\n%s", valid_devices)
         _LOGGER.debug("Discovered devices: %s", devices)
         return devices
 
@@ -337,7 +337,7 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 
     async def async_step_bluetooth(
-        self, 
+        self,
         discovery_info: BluetoothServiceInfoBleak
     ) -> FlowResult:
         """Handle Bluetooth discovery."""
@@ -386,8 +386,8 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
                 return await self.async_step_custom_calculation()
             else:
                 return self.async_create_entry(
-                    title=f"BM6 {user_input[CONF_DEVICE_ADDRESS]}",
-                    description="BM6 battery monitor",
+                    title=f"BM7 {user_input[CONF_DEVICE_ADDRESS]}",
+                    description="BM7 battery monitor",
                     data=self._data,
                 )
         if self.context.get("unique_id"):
@@ -422,8 +422,8 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
                 return await self.async_step_custom_voltage()
             else:
                 return self.async_create_entry(
-                    title=f"BM6 {self._data[CONF_DEVICE_ADDRESS]}",
-                    description="BM6 battery monitor",
+                    title=f"BM7 {self._data[CONF_DEVICE_ADDRESS]}",
+                    description="BM7 battery monitor",
                     data=self._data,
                 )
         schema = await build_schema(
@@ -450,8 +450,8 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
             errors = validate_custom_voltage(self._data, errors)
             if not errors:
                 return self.async_create_entry(
-                    title=f"BM6 {self._data[CONF_DEVICE_ADDRESS]}",
-                    description="BM6 battery monitor",
+                    title=f"BM7 {self._data[CONF_DEVICE_ADDRESS]}",
+                    description="BM7 battery monitor",
                     data=self._data,
                 )
         schema = await build_schema(
@@ -470,15 +470,15 @@ class BM6ConfigFlow(ConfigFlow, domain=DOMAIN):
     @callback
     def async_get_options_flow(config_entry):
         """Get the options flow for this handler."""
-        return BM6OptionsFlow(config_entry)
+        return BM7OptionsFlow(config_entry)
 
 
-class BM6OptionsFlow(OptionsFlow):
-    """Handle BM6 options."""
+class BM7OptionsFlow(OptionsFlow):
+    """Handle BM7 options."""
 
     VERSION = 1
 
-    def __init__(self, config_entry: BM6ConfigEntry) -> None:
+    def __init__(self, config_entry: BM7ConfigEntry) -> None:
         """Initialize options flow."""
         self._config_entry = config_entry
         self._data: dict[str, str] = dict(config_entry.data)
@@ -505,8 +505,8 @@ class BM6OptionsFlow(OptionsFlow):
                     self._config_entry, data=self._data
                 )
                 return self.async_create_entry(
-                    title=f"BM6 {self._data[CONF_DEVICE_ADDRESS]}",
-                    description="BM6 battery monitor",
+                    title=f"BM7 {self._data[CONF_DEVICE_ADDRESS]}",
+                    description="BM7 battery monitor",
                     data=self._data,
                 )
         schema = await build_schema(
@@ -535,8 +535,8 @@ class BM6OptionsFlow(OptionsFlow):
                     self._config_entry, data=self._data
                 )
                 return self.async_create_entry(
-                    title=f"BM6 {self._data[CONF_DEVICE_ADDRESS]}",
-                    description="BM6 battery monitor",
+                    title=f"BM7 {self._data[CONF_DEVICE_ADDRESS]}",
+                    description="BM7 battery monitor",
                     data=self._data,
                 )
         schema = await build_schema(
@@ -566,8 +566,8 @@ class BM6OptionsFlow(OptionsFlow):
                     self._config_entry, data=self._data
                 )
                 return self.async_create_entry(
-                    title=f"BM6 {self._data[CONF_DEVICE_ADDRESS]}",
-                    description="BM6 battery monitor",
+                    title=f"BM7 {self._data[CONF_DEVICE_ADDRESS]}",
+                    description="BM7 battery monitor",
                     data=self._data,
                 )
         schema = await build_schema(

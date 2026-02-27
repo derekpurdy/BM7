@@ -19,7 +19,7 @@ from .const import (
     CONF_BATTERY_TYPE,
     CONF_STATE_ALGORITHM,
 )
-from .bm6_connect import BM6RealTimeData, BM6RealTimeState
+from .bm7_connect import BM7RealTimeData, BM7RealTimeState
 
 
 class BatteryVoltage(Enum):
@@ -55,7 +55,7 @@ class BatteryStateAlgorithm(Enum):
     Important: This enumerator correspond in 1:1 to translation files in section enums.BatteryStateAlg
     """
 
-    By_Device = "by_device"  # Calculated by BM6 Device
+    By_Device = "by_device"  # Calculated by BM7 Device
     SoC_SoD = "soc_sod"  # Calculated using State of Charge/Discharge
     CVR_DVR = "cvr_dvr"  # Calculated using Charging/Discharging Voltage Range
 
@@ -365,12 +365,12 @@ class Battery:
         """Check if the current voltage is within the State of Discharge (SoD) range."""
         return self.range.sod.in_range(self._voltage)
 
-    def update(self, real_time_data: BM6RealTimeData, voltage: float):
+    def update(self, real_time_data: BM7RealTimeData, voltage: float):
         """Set the real-time data of the battery."""
         self._voltage = voltage
         if self.info.state_algorithm == BatteryStateAlgorithm.By_Device:
             self._percent = real_time_data.Percent
-            self._state = self._bm6_status_to_battery_state(real_time_data.State)
+            self._state = self._bm7_status_to_battery_state(real_time_data.State)
         else:
             self._update_percent()
             self._update_state()
@@ -396,12 +396,12 @@ class Battery:
         else:
             self._state = BatteryState.Idle
 
-    def _bm6_status_to_battery_state(self, state: BM6RealTimeState) -> BatteryState:
-        """Convert BM6 real-time status to BatteryState."""
+    def _bm7_status_to_battery_state(self, state: BM7RealTimeState) -> BatteryState:
+        """Convert BM7 real-time status to BatteryState."""
         state_mapping = {
-            BM6RealTimeState.BatteryOk: BatteryState.Ok,
-            BM6RealTimeState.LowVoltage: BatteryState.LowVoltage,
-            BM6RealTimeState.Charging: BatteryState.Charging,
+            BM7RealTimeState.BatteryOk: BatteryState.Ok,
+            BM7RealTimeState.LowVoltage: BatteryState.LowVoltage,
+            BM7RealTimeState.Charging: BatteryState.Charging,
         }
         return state_mapping.get(state, BatteryState.Unknown)
 

@@ -1,5 +1,5 @@
 """
-This module sets up the BM6 component for Home Assistant.
+This module sets up the BM7 component for Home Assistant.
 """
 
 from __future__ import annotations
@@ -13,12 +13,12 @@ from homeassistant.helpers.entity_component import EntityComponent
 from homeassistant.const import __version__ as HA_VERSION
 
 from .const import (
-    COMPONENT, 
-    DOMAIN, 
-    MIN_REQUIRED_HA_VERSION, 
+    COMPONENT,
+    DOMAIN,
+    MIN_REQUIRED_HA_VERSION,
     PLATFORMS
-)    
-from .coordinator import BM6DataUpdateCoordinator
+)
+from .coordinator import BM7DataUpdateCoordinator
 
 if TYPE_CHECKING:
     from homeassistant.core import HomeAssistant
@@ -26,13 +26,13 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class BM6Data:
-    """Holds global data for BM6."""
+class BM7Data:
+    """Holds global data for BM7."""
 
-    coordinator: BM6DataUpdateCoordinator
+    coordinator: BM7DataUpdateCoordinator
 
 
-type BM6ConfigEntry = ConfigEntry[BM6Data]
+type BM7ConfigEntry = ConfigEntry[BM7Data]
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -49,26 +49,26 @@ def is_ha_supported() -> bool:
 
 
 async def async_setup(
-        hass: HomeAssistant, 
+        hass: HomeAssistant,
         config: dict
 ):
-    """Set up the BM6 component."""
-    _LOGGER.debug("BM6 component is set up")
+    """Set up the BM7 component."""
+    _LOGGER.debug("BM7 component is set up")
     return True
 
 
 async def async_setup_entry(
-        hass: HomeAssistant, 
-        entry: BM6ConfigEntry
+        hass: HomeAssistant,
+        entry: BM7ConfigEntry
 ) -> bool:
-    """Set up BM6 from a config entry."""
+    """Set up BM7 from a config entry."""
     if not is_ha_supported():
         return False
-    coordinator = BM6DataUpdateCoordinator(hass, entry)
-    entry.runtime_data = BM6Data(coordinator)
+    coordinator = BM7DataUpdateCoordinator(hass, entry)
+    entry.runtime_data = BM7Data(coordinator)
     if hass.data.get(DOMAIN) is None:
         hass.data.setdefault(
-            DOMAIN, 
+            DOMAIN,
             {COMPONENT: EntityComponent(_LOGGER, DOMAIN, hass)}
         )
     hass.data[DOMAIN][entry.entry_id] = entry.data
@@ -78,8 +78,8 @@ async def async_setup_entry(
 
 
 async def async_unload_entry(
-        hass: HomeAssistant, 
-        entry: BM6ConfigEntry
+        hass: HomeAssistant,
+        entry: BM7ConfigEntry
 ) -> bool:
     """Unload a config entry."""
     unload_ok: bool = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
@@ -91,8 +91,8 @@ async def async_unload_entry(
 
 
 async def async_reload_entry(
-        hass: HomeAssistant, 
-        entry: BM6ConfigEntry
+        hass: HomeAssistant,
+        entry: BM7ConfigEntry
 ) -> None:
     """Reload the config entry when it changed."""
     await hass.config_entries.async_reload(entry.entry_id)

@@ -1,4 +1,4 @@
-"""This module implements communication with BM6 device."""
+"""This module implements communication with BM7 device."""
 
 from __future__ import annotations
 
@@ -30,8 +30,8 @@ from .const import (
 _LOGGER = logging.getLogger(__name__)
 
 
-class BM6RealTimeState(Enum):
-    """Enumeration for BM6 device status."""
+class BM7RealTimeState(Enum):
+    """Enumeration for BM7 device status."""
 
     BatteryOk = 0
     LowVoltage = 1
@@ -39,18 +39,18 @@ class BM6RealTimeState(Enum):
 
 
 @dataclass
-class BM6RealTimeData:
-    """Class to store the real-time data read from the BM6 device."""
+class BM7RealTimeData:
+    """Class to store the real-time data read from the BM7 device."""
 
     Voltage: float = 0.0  # Battery voltage in V
     Temperature: int = 0  # Temperature in °C
     Percent: int = 0  # Percentage of power in %
     RapidAcceleration: int = 0
     RapidDeceleration: int = 0
-    State: BM6RealTimeState = BM6RealTimeState.BatteryOk  # Status of the battery
+    State: BM7RealTimeState = BM7RealTimeState.BatteryOk  # Status of the battery
 
     def __init__(self, data: str):
-        """Initialize BM6ReadTimeData from a hex string."""
+        """Initialize BM7ReadTimeData from a hex string."""
         self.Voltage = int(data[14:18], 16) / 100
         temperature_sign = int(data[6:8], 16)
         self.Temperature = int(data[8:10], 16)
@@ -63,19 +63,19 @@ class BM6RealTimeData:
 
 
 @dataclass
-class BM6Firmware:
-    """Class to store the firmware version of the BM6 device."""
+class BM7Firmware:
+    """Class to store the firmware version of the BM7 device."""
 
     Version: str = None
 
     def __init__(self, data: str):
-        """Initialize BM6Firmware with version data."""
+        """Initialize BM7Firmware with version data."""
         self.Version = data
 
 
 @dataclass
-class BM6Advertisement:
-    """Class to store the advertisement data of the BM6 device."""
+class BM7Advertisement:
+    """Class to store the advertisement data of the BM7 device."""
 
     RSSI: int = None
     Scanner: str = None
@@ -85,54 +85,54 @@ class BM6Advertisement:
         advertisement_data: Optional[AdvertisementData],
         ha_scanner: Optional[BaseHaScanner],
     ):
-        """Initialize BM6Advertisement with advertisement data."""
+        """Initialize BM7Advertisement with advertisement data."""
         self.RSSI = advertisement_data.rssi if advertisement_data else None
         self.Scanner = ha_scanner.name if ha_scanner else None
 
 
 @dataclass
-class BM6Data:
-    """Class to store all data read from the BM6 device."""
+class BM7Data:
+    """Class to store all data read from the BM7 device."""
 
-    Firmware: Optional[BM6Firmware] = None
-    RealTime: Optional[BM6RealTimeData] = None
-    Advertisement: Optional[BM6Advertisement] = None
+    Firmware: Optional[BM7Firmware] = None
+    RealTime: Optional[BM7RealTimeData] = None
+    Advertisement: Optional[BM7Advertisement] = None
 
     def __init__(
         self,
         advertisement_data: Optional[AdvertisementData],
         ha_scanner: Optional[BaseHaScanner],
     ):
-        """Initialize BM6Data with advertisement data."""
-        self.Advertisement = BM6Advertisement(advertisement_data, ha_scanner)
+        """Initialize BM7Data with advertisement data."""
+        self.Advertisement = BM7Advertisement(advertisement_data, ha_scanner)
 
 
-class BM6DeviceError(RuntimeError): ...
+class BM7DeviceError(RuntimeError): ...
 
 
-class BM6Connector:
-    """Class to manage the connection to the BM6 device."""
+class BM7Connector:
+    """Class to manage the connection to the BM7 device."""
 
     def __init__(
         self,
         hass: HomeAssistant,
         address: str
     ):
-        """Initialize the BM6Connector with either a HASS or a BLEDevice."""
+        """Initialize the BM7Connector with either a HASS or a BLEDevice."""
         self.hass = hass
         self._address: str = address
         self._scanners: list[BluetoothScannerDevice] = None
-        self._data: BM6Data = None
-        _LOGGER.debug("Get device BM6 at %s from HASS", self._address)
+        self._data: BM7Data = None
+        _LOGGER.debug("Get device BM7 at %s from HASS", self._address)
         self._scanners: list[BluetoothScannerDevice] = async_scanner_devices_by_address(
-                hass, 
-                self._address, 
+                hass,
+                self._address,
                 connectable=True
         )
         if not self._scanners:
-            raise BM6DeviceError(f"Bluetooth device {self._address} not found")
+            raise BM7DeviceError(f"Bluetooth device {self._address} not found")
         self._scanners.sort(key=lambda scanner: scanner.advertisement.rssi, reverse=True)
-        _LOGGER.debug("Device BM6 at %s is seen by scanners %s",
+        _LOGGER.debug("Device BM7 at %s is seen by scanners %s",
             self._address,
             [
                 {
@@ -154,46 +154,46 @@ class BM6Connector:
         return cipher.encrypt(data)
 
     async def _notify_callback(
-            self, 
-            sender: BleakGATTCharacteristic, 
+            self,
+            sender: BleakGATTCharacteristic,
             data: bytearray
     ):
-        """Callback function to handle notifications from the BM6 device."""
+        """Callback function to handle notifications from the BM7 device."""
         message = self._decrypt(data).hex()
-        _LOGGER.debug("Received data from BM6 at %s: %s", self._address, message)
+        _LOGGER.debug("Received data from BM7 at %s: %s", self._address, message)
         if message.startswith(GATT_NOTIFY_REALTIME_PREFIX):
-            self._data.RealTime = BM6RealTimeData(message)
+            self._data.RealTime = BM7RealTimeData(message)
             _LOGGER.debug(
-                "Decoded real-time data from BM6 at %s: %s",
+                "Decoded real-time data from BM7 at %s: %s",
                 self._address,
                 self._data.RealTime,
             )
         elif message.startswith(GATT_NOTIFY_VERSION_PREFIX):
-            self._data.Firmware = BM6Firmware(message)
+            self._data.Firmware = BM7Firmware(message)
             _LOGGER.debug(
-                "Decoded firmware version from BM6 at %s: %s",
+                "Decoded firmware version from BM7 at %s: %s",
                 self._address,
                 self._data.Firmware,
             )
 
-    async def get_data(self) -> BM6Data:
-        """Retrieve data from the BM6 device."""
+    async def get_data(self) -> BM7Data:
+        """Retrieve data from the BM7 device."""
         exceptions: list[Exception] = []
         for scanner in self._scanners:
-            _LOGGER.debug("Start getting data from the BM6 at %s via scanner %s", 
+            _LOGGER.debug("Start getting data from the BM7 at %s via scanner %s",
                           self._address,
                           scanner.scanner.name)
             try:
-                self._data = BM6Data(
-                    scanner.advertisement, 
+                self._data = BM7Data(
+                    scanner.advertisement,
                     scanner.scanner
                 )
                 async with BleakClient(
-                    scanner.ble_device, 
+                    scanner.ble_device,
                     timeout=BLEAK_CLIENT_TIMEOUT
                 ) as client:
                     _LOGGER.debug(
-                        "Write to BM6 at %s characteristic %s",
+                        "Write to BM7 at %s characteristic %s",
                         self._address,
                         CHARACTERISTIC_UUID_WRITE,
                     )
@@ -202,40 +202,40 @@ class BM6Connector:
                         self._encrypt(bytearray.fromhex(GATT_DATA_REALTIME)),
                         response=True,
                     )
-                    _LOGGER.debug("Wait for data from BM6 at %s", self._address)
+                    _LOGGER.debug("Wait for data from BM7 at %s", self._address)
                     self._data.RealTime = None
                     await client.start_notify(
                         CHARACTERISTIC_UUID_NOTIFY, self._notify_callback
                     )
                     while self._data is None or self._data.RealTime is None:
                         await asyncio.sleep(0.5)
-                    _LOGGER.debug("Finishing wait for data from BM6 at %s", self._address)
+                    _LOGGER.debug("Finishing wait for data from BM7 at %s", self._address)
                     await client.stop_notify(CHARACTERISTIC_UUID_NOTIFY)
 
                     # The following code is commented out but can be used to get firmware version data
-                    # _LOGGER.debug("Write to BM6 at %s characteristic %s", device.address, CHARACTERISTIC_UUID_WRITE)
+                    # _LOGGER.debug("Write to BM7 at %s characteristic %s", device.address, CHARACTERISTIC_UUID_WRITE)
                     # await client.write_gatt_char(CHARACTERISTIC_UUID_WRITE,
                     #                              self._encrypt(bytearray.fromhex(GATT_DATA_VERSION)),
                     #                              response=True)
-                    # _LOGGER.debug("Wait for data from BM6 at %s", device.address)
+                    # _LOGGER.debug("Wait for data from BM7 at %s", device.address)
                     # self._data.Firmware = None
                     # await client.start_notify(CHARACTERISTIC_UUID_NOTIFY,
                     #                           self._notify_callback)
                     # while self._data is None or self._data.Firmware is None:
                     #     await asyncio.sleep(0.5)
-                    # _LOGGER.debug("Finishing wait for data from BM6 at %s", device.address)
+                    # _LOGGER.debug("Finishing wait for data from BM7 at %s", device.address)
                     # await client.stop_notify(CHARACTERISTIC_UUID_NOTIFY)
             except Exception as e:
                 e.add_note = f"Using scanner {scanner.scanner.name}"
                 exceptions.append(e)
-                _LOGGER.warning("Error while reading BM6 at %s: %s", self._address, e)
+                _LOGGER.warning("Error while reading BM7 at %s: %s", self._address, e)
             if not self._data.RealTime:
                 if len(exceptions) > 0:
-                    raise BM6DeviceError(
-                        f"Error while reading BM6 at {self._address}: {exceptions}"
+                    raise BM7DeviceError(
+                        f"Error while reading BM7 at {self._address}: {exceptions}"
                     ) from exceptions[0]
                 else:
-                    raise BM6DeviceError(
-                        f"Error while reading BM6 at {self._address}"
+                    raise BM7DeviceError(
+                        f"Error while reading BM7 at {self._address}"
                     )
         return self._data if self._data else None

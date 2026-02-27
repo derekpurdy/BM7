@@ -1,32 +1,32 @@
-# Battery Monitor BM6 Integration
-![GitHub License](https://img.shields.io/github/license/Rafciq/BM6)
-![GitHub Release](https://img.shields.io/github/v/release/Rafciq/BM6)
-![GitHub Release Date](https://img.shields.io/github/release-date/Rafciq/BM6)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/Rafciq/BM6)
+# Battery Monitor BM7 Integration
+![GitHub License](https://img.shields.io/github/license/Rafciq/BM7)
+![GitHub Release](https://img.shields.io/github/v/release/Rafciq/BM7)
+![GitHub Release Date](https://img.shields.io/github/release-date/Rafciq/BM7)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/Rafciq/BM7)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=flat-square)](https://github.com/hacs)
-![GitHub Repo stars](https://img.shields.io/github/stars/Rafciq/BM6)
+![GitHub Repo stars](https://img.shields.io/github/stars/Rafciq/BM7)
 
-This custom component for [Home Assistant](https://www.home-assistant.io) to reads BLE Car Battery Monitor BM6.
+This custom component for [Home Assistant](https://www.home-assistant.io) to reads BLE Car Battery Monitor BM7.
 
 ## About
 <table width="100%" style="border: none;">
     <tr>
-        <td><img src="https://github.com/Rafciq/BM6/blob/59d07c0c791f349ccf2342f3340860cabc7606dc/images/icon.png" alt="Icon"></td>
-        <td valign="top">This is an integration that allows you to observe BM6 parameters on the Home Assistant platform. BM6 is monitored via a Bluetooth gateway, and its parameters such as temperature, voltage, percent, state are saved as entities by the HA platform.<br><br>
+        <td><img src="https://github.com/Rafciq/BM7/blob/59d07c0c791f349ccf2342f3340860cabc7606dc/images/icon.png" alt="Icon"></td>
+        <td valign="top">This is an integration that allows you to observe BM7 parameters on the Home Assistant platform. BM7 is monitored via a Bluetooth gateway, and its parameters such as temperature, voltage, percent, state are saved as entities by the HA platform.<br><br>
         This integration allows you to add any number of such devices.
-        <td><img src="https://github.com/Rafciq/BM6/blob/59d07c0c791f349ccf2342f3340860cabc7606dc/images/bm6_device.png" alt="BM6" width="70%" height="70%"></td>
+        <td><img src="https://github.com/Rafciq/BM7/blob/59d07c0c791f349ccf2342f3340860cabc7606dc/images/bm7_device.png" alt="BM7" width="70%" height="70%"></td>
     </tr>
 </table>
 
 **:warning: Warning! The author is not responsible for any damages related to the use of this integration. You use this integration at your own risk and responsibility.**
 
 ## Installation
-Before installing this integration, you must have [HACS](https://hacs.xyz/) integration installed first. 
-Select 'HACS' (usual on the left bar), add then choose from menu 'Custom repositories' (on top at right). Put the address https://github.com/Rafciq/BM6 at first and select repository type 'Integration' choose 'ADD'. Now you can add BM6 devices.
+Before installing this integration, you must have [HACS](https://hacs.xyz/) integration installed first.
+Select 'HACS' (usual on the left bar), add then choose from menu 'Custom repositories' (on top at right). Put the address https://github.com/Rafciq/BM7 at first and select repository type 'Integration' choose 'ADD'. Now you can add BM7 devices.
 ## Configuration
 Go to "Settings', next 'Devices & services', select 'Integration' and use 'ADD INTEGRATION'
 
-In the configuration process, you need to provide some information. This includes the battery voltage, type, method of calculating its condition or percentage. You can also specify the intervals at which data should be downloaded from the BM6 device. You can also correct the temperature and voltage provided by the BM6 device by providing their offset. It is also possible to change the temperature unit.
+In the configuration process, you need to provide some information. This includes the battery voltage, type, method of calculating its condition or percentage. You can also specify the intervals at which data should be downloaded from the BM7 device. You can also correct the temperature and voltage provided by the BM7 device by providing their offset. It is also possible to change the temperature unit.
 ### Battery Voltage supported
 - 6 Volts
 - 12 Volts
@@ -44,12 +44,12 @@ In the configuration process, you need to provide some information. This include
 ### Battery States and Percentage
 #### Algorithms of battery status
 To calculate percentage of battery power and actual state, integration use algorithm configured by user.
-- Calculated by BM6 Device (integration get information from BM6 device)
+- Calculated by BM7 Device (integration get information from BM7 device)
 - Calculated using State of Charge/Discharge (SoC/SoD)
 - Calculated using Charge/Discharge Voltage Range (CVR/DVR)
 #### States of battery
-Each BM6 device have one calculated sensor presents actual battery state. It can take one of these values. Availability of this states is depending of used algorithms.
-| State name    | From BM6 | Calculated | Description                                                                 |
+Each BM7 device have one calculated sensor presents actual battery state. It can take one of these values. Availability of this states is depending of used algorithms.
+| State name    | From BM7 | Calculated | Description                                                                 |
 |---------------|:--------:|:----------:|-----------------------------------------------------------------------------|
 | Ok            |    X     |            | Battery state Ok (1)                                                        |
 | Low Voltage   |    X     |            | Low voltage (1)                                                             |
@@ -58,20 +58,20 @@ Each BM6 device have one calculated sensor presents actual battery state. It can
 | Idle          |          |     X      | Idle state, voltage is between maximum SoD or DVR and minimum of SoC or CVR |
 | Charging      |    X     |     X      | Charging process, voltage is between minimum and maximum of SoC or CVR      |
 | Over Voltage  |          |     X      | Voltage is over maximum of SoC or CVR                                       |
- (1) - Only the BM6 manufacturer knows the details
+ (1) - Only the BM7 manufacturer knows the details
 ## Integration Sensors
-- Sensor 'Temperature' it presents temperature measure by BM6 device. Value can by calibrated at integration configuration time.
-- Sensor 'Voltage' it presents battery voltage measure by BM6 device. Value can by calibrated too.
-- Sensor 'State' calculates the hypothetical battery state from the actual device voltage. Calculation can use parameters of battery configuration or can be get directly from BM6 device.
+- Sensor 'Temperature' it presents temperature measure by BM7 device. Value can by calibrated at integration configuration time.
+- Sensor 'Voltage' it presents battery voltage measure by BM7 device. Value can by calibrated too.
+- Sensor 'State' calculates the hypothetical battery state from the actual device voltage. Calculation can use parameters of battery configuration or can be get directly from BM7 device.
 - Sensor 'Percent' calculates the hypothetical charge or discharge percentage of the battery using one of these algorithms
 ## Diagnostic Sensors
 - Sensor 'Signal Strength (RSSI)' - signal strength reported by Bluetooth gateway.
-- Sensor 'Percentage by device' - percentage value reported directly from BM6 device.
-- Sensor 'State by device' - battery state reported directly from BM6 device. Only 'Ok', 'Low Voltage' and 'Charging'.
-- Sensor 'Bluetooth scanner' - name and address of Bluetooth scanner/gateway who interact with BM6 device
+- Sensor 'Percentage by device' - percentage value reported directly from BM7 device.
+- Sensor 'State by device' - battery state reported directly from BM7 device. Only 'Ok', 'Low Voltage' and 'Charging'.
+- Sensor 'Bluetooth scanner' - name and address of Bluetooth scanner/gateway who interact with BM7 device
 ## Triggers
 Triggers availability is depending on choose algorithm at configuration time. Their behavior corresponds to the change of the value 'State' sensor.
-| Name                      | From BM6 | Calculated |
+| Name                      | From BM7 | Calculated |
 |---------------------------|:--------:|:----------:|
 | Started OK state          |    X     |            |
 | Started Low Voltage state |    X     |            |
@@ -82,28 +82,28 @@ Triggers availability is depending on choose algorithm at configuration time. Th
 | Over Voltage              |          |     X      |
 | State Changed             |    X     |     X      |
 ## Known Issues:
-- BM6 device is unresponsive or not visible. It is likely that BM6 device cannot connect to multiple other devices at the same time. If you have a mobile app for BM6 running, your integration may not be able to connect to BM6 device at the same time.
-## Device Hardware BM6
-The Battery Monitor BM6 is a device designed to help you keep track of your car battery's health and performance. Here are some key features:
+- BM7 device is unresponsive or not visible. It is likely that BM7 device cannot connect to multiple other devices at the same time. If you have a mobile app for BM7 running, your integration may not be able to connect to BM7 device at the same time.
+## Device Hardware BM7
+The Battery Monitor BM7 is a device designed to help you keep track of your car battery's health and performance. Here are some key features:
 - **Real-time Voltage Monitoring**: It allows you to monitor the voltage of your car battery in real-time.
 - **Battery Testing**: You can test the starting and charging system voltage to ensure your battery is functioning properly.
 - **Data Logging**: The device can accurately record the time of car starting and stopping, and all data can be displayed on your mobile phone via Bluetooth.
-- **Compatibility**: The BM6 is compatible with most 12V car batteries and can be easily installed in your vehicle.
+- **Compatibility**: The BM7 is compatible with most 12V car batteries and can be easily installed in your vehicle.
 - **Bluetooth Connectivity**: It connects to your smartphone via Bluetooth, allowing you to monitor your battery's health and performance in real-time.
 
-Battery Monitor BM6 is also available under other names:
+Battery Monitor BM7 is also available under other names:
 - Sealey BT2020 Battery Monitor
 - ANCEL BM200 Car Battery Tester
-- QUICKLYNKS Battery Monitor BM6
+- QUICKLYNKS Battery Monitor BM7
 ## Languages
 The integration has been automatically translated into several languages:
 
 ![Image](https://flagcdn.com/w20/al.png) Albanian, ![Image](https://flagcdn.com/w20/hr.png) Croatian, ![Image](https://flagcdn.com/w20/cz.png) Czech, ![Image](https://flagcdn.com/w20/dk.png) Danish, ![Image](https://flagcdn.com/w20/nl.png) Dutch, ![Image](https://flagcdn.com/w20/us.png) English, ![Image](https://flagcdn.com/w20/fi.png) Finnish, ![Image](https://flagcdn.com/w20/fr.png) French, ![Image](https://flagcdn.com/w20/de.png) German, ![Image](https://flagcdn.com/w20/er.png) Greek, ![Image](https://flagcdn.com/w20/hu.png) Hungarian, ![Image](https://flagcdn.com/w20/is.png) Icelandic, ![Image](https://flagcdn.com/w20/ga.png) Irish, ![Image](https://flagcdn.com/w20/it.png) Italian, ![Image](https://flagcdn.com/w20/lv.png) Latvian, ![Image](https://flagcdn.com/w20/lt.png) Lithuanian, ![Image](https://flagcdn.com/w20/mk.png) Macedonian, ![Image](https://flagcdn.com/w20/mt.png) Maltese, ![Image](https://flagcdn.com/w20/no.png) Norwegian, ![Image](https://flagcdn.com/w20/pl.png) Polish, ![Image](https://flagcdn.com/w20/pt.png) Portuguese, ![Image](https://flagcdn.com/w20/ro.png) Romanian, ![Image](https://flagcdn.com/w20/rs.png) Serbian, ![Image](https://flagcdn.com/w20/sk.png) Slovak, ![Image](https://flagcdn.com/w20/sl.png) Slovenian, ![Image](https://flagcdn.com/w20/es.png) Spanish, ![Image](https://flagcdn.com/w20/sv.png) Swedish, ![Image](https://flagcdn.com/w20/tr.png) Turkish, ![Image](https://flagcdn.com/w20/ua.png) Ukrainian
 
-If you would like to correct any of them, please create an [issue](https://github.com/Rafciq/BM6/issues).
+If you would like to correct any of them, please create an [issue](https://github.com/Rafciq/BM7/issues).
 # Thanks
 This project is inspired and based on the hard work of other people and their publications:
-- [Reverse Engineering the BM6 BLE Battery Monitor](https://www.tarball.ca/posts/reverse-engineering-the-bm6-ble-battery-monitor/)
+- [Reverse Engineering the BM7 BLE Battery Monitor](https://www.tarball.ca/posts/reverse-engineering-the-bm6-ble-battery-monitor/)
 - [bm6-battery-monitor](https://github.com/jeffwdh/bm6-battery-monitor)
 - [bm2-battery-monitor](https://github.com/KrystianD/bm2-battery-monitor/blob/master/.docs/reverse_engineering.md)
 - [BM2: Reversing the BLE Protocol of the BM2 Battery Monitor](https://doubleagent.net/bm2-reversing-the-ble-protocol-of-the-bm2-battery-monitor/)
@@ -159,6 +159,6 @@ This project is inspired and based on the hard work of other people and their pu
 - SoD = State of Discharge
 
 ## Images of Device
-![Image](images/bm6_device.png)
-![Image](images/bm6_box.png)
-![Image](images/bm6_with_battery.png)
+![Image](images/bm7_device.png)
+![Image](images/bm7_box.png)
+![Image](images/bm7_with_battery.png)

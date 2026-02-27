@@ -9,4 +9,4 @@ homeassistant:
 logger:
   default: info
   logs:
-    custom_components.bm6: debug
+    custom_components.bm7: debug

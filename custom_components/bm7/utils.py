@@ -1,4 +1,4 @@
-"""Utility functions for the bm6 integration."""
+"""Utility functions for the 7 integration."""
 
 from __future__ import annotations
 
