@@ -1,9 +1,9 @@
 # Battery Monitor BM7 Integration
 
 ![GitHub License](https://img.shields.io/github/license/derekpurdy/BM7)
-![GitHub Release](https://img.shields.io/github/v/release/derekpurdy/BM7)
+[![GitHub Release](https://img.shields.io/github/release/derekpurdy/BM7)](https://github.com/derekpurdy/BM7/releases)
 ![GitHub Release Date](https://img.shields.io/github/release-date/derekpurdy/BM7)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/derekpurdy/BM7)
+[![GitHub Issues](https://img.shields.io/github/issues/derekpurdy/BM7)](https://github.com/derekpurdy/BM7/issues)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=flat-square)](https://github.com/hacs)
 ![GitHub Repo stars](https://img.shields.io/github/stars/derekpurdy/BM7)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/derekpurdy/BM7/total)
