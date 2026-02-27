@@ -43,13 +43,13 @@
       "service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb"
     }
   ],
-  "codeowners": [ "@Rafciq" ],
+  "codeowners": [ "@derekpurdy" ],
   "config_flow": true,
   "dependencies": [ "bluetooth_adapters", "device_tracker" ],
-  "documentation": "https://github.com/Rafciq/BM7",
+  "documentation": "https://github.com/derekpurdy/BM7",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/dckiller51/BM7/issues",
+  "issue_tracker": "https://github.com/derekpurdy/BM7/issues",
   "requirements": [],
   "version": "1.0.3"
 }
