@@ -124,7 +124,7 @@
                         "name": "Corrected voltage"
                     },
                     "percentage": {
-                        "name": "Percent"
+                        "name": "Battery Level"
                     },
                     "state_algorithm": {
                         "name": "Battery calculation algorithm",
@@ -211,8 +211,8 @@
                 "fla": "Flooded Lead Acid (FLA)",
                 "agm": "Absorbent Glass Mat (AGM)",
                 "gel": "Gel cell (gel)",
-                "nicd": "Nickel–cadmium (Nicd)",
-                "nimh": "Nickel–Metal Hydride (NiMH)",
+                "nicd": "Nickel-cadmium (Nicd)",
+                "nimh": "Nickel-Metal Hydride (NiMH)",
                 "liion": "Lithium-ion (Li-ion)",
                 "lifepo4": "Lithium Iron Phosphate (LiFePO4)",
                 "lto": "Lithium-Titanium-Oxide (LTO)",
