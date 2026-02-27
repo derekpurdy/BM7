@@ -1,12 +1,12 @@
 {
-    "title": "BM6 battery monitor",
+    "title": "BM7 battery monitor",
     "config": {
         "step": {
             "user": {
-                "title": "Configuration of the new BM6 monitor",
+                "title": "Configuration of the new BM7 monitor",
                 "description": "Basic device configuration parameters.",
                 "data": {
-                    "device_address": "Name/address BM6",
+                    "device_address": "Name/address BM7",
                     "state_algorithm": "Battery calculation algorithm",
                     "update_interval": "Data update interval",
                     "voltage_offset": "Voltage correction",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Configuration of the new BM6 monitor",
+                "title": "Configuration of the new BM7 monitor",
                 "description": "Battery configuration parameters.",
                 "data": {
                     "battery_voltage": "Battery voltage",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitor configuration",
+                "title": "BM7 monitor configuration",
                 "description": "Custom battery configuration parameters.",
                 "data": {
                     "custom_dvr_min": "Minimum unloading voltage (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "No BM6 devices were found."
+            "no_devices_found": "No BM7 devices were found."
         },
         "error": {
             "max_less_than_min": "The maximum voltage value must be greater than the minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -configuration of the BM6 monitor",
+                "title": "Re -configuration of the BM7 monitor",
                 "description": "Basic device configuration parameters.",
                 "data": {
                     "state_algorithm": "Battery calculation algorithm",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Configuration of the new BM6 monitor",
+                "title": "Configuration of the new BM7 monitor",
                 "description": "Battery configuration parameters.",
                 "data": {
                     "battery_voltage": "Battery voltage",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitor configuration",
+                "title": "BM7 monitor configuration",
                 "description": "Custom battery configuration parameters.",
                 "data": {
                     "custom_dvr_min": "Minimum unloading voltage (DVR)",
@@ -93,10 +93,10 @@
     "entity": {
         "sensor": {
             "voltage": {
-                "name": "Tension",
+                "name": "Voltage",
                 "state_attributes": {
                     "voltage_device": {
-                        "name": "Actual tension"
+                        "name": "Actual voltage"
                     },
                     "voltage_corrected": {
                         "name": "Corrected voltage"
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Battery calculation algorithm",
                         "state": {
-                            "by_device": "Calculated by the BM6 device",
+                            "by_device": "Calculated by the BM7 device",
                             "soc_sod": "Calculated from the state of charge/discharge (SOC/SOD)",
                             "cvr_dvr": "Calculated in charging/discharge voltage (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Closed by the BM6 device",
+                "by_device": "Closed by the BM7 device",
                 "soc_sod": "ACCEPTOR FROM THE CHANGE/SENDING STATE (SOC/SOD)",
                 "cvr_dvr": "ACCEPLE CHARACTION/SENDING TIME (CVR/DVR)"
             }
