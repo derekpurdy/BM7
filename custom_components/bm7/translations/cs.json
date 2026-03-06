@@ -1,12 +1,12 @@
 {
-    "title": "Monitor baterie BM6",
+    "title": "Monitor baterie BM7",
     "config": {
         "step": {
             "user": {
-                "title": "Konfigurace nového monitoru BM6",
+                "title": "Konfigurace nového monitoru BM7",
                 "description": "Základní parametry konfigurace zařízení.",
                 "data": {
-                    "device_address": "Jméno/adresa BM6",
+                    "device_address": "Jméno/adresa BM7",
                     "state_algorithm": "Algoritmus výpočtu baterie",
                     "update_interval": "Interval aktualizace dat",
                     "voltage_offset": "Korekce napětí",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurace nového monitoru BM6",
+                "title": "Konfigurace nového monitoru BM7",
                 "description": "Parametry konfigurace baterie.",
                 "data": {
                     "battery_voltage": "Napětí baterie",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Konfigurace monitoru BM6",
+                "title": "Konfigurace monitoru BM7",
                 "description": "Vlastní parametry konfigurace baterie.",
                 "data": {
                     "custom_dvr_min": "Minimální vykládací napětí (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Nebyla nalezena žádná zařízení BM6."
+            "no_devices_found": "Nebyla nalezena žádná zařízení BM7."
         },
         "error": {
             "max_less_than_min": "Maximální hodnota napětí musí být větší než minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -konfigurace monitoru BM6",
+                "title": "Re -konfigurace monitoru BM7",
                 "description": "Základní parametry konfigurace zařízení.",
                 "data": {
                     "state_algorithm": "Algoritmus výpočtu baterie",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurace nového monitoru BM6",
+                "title": "Konfigurace nového monitoru BM7",
                 "description": "Parametry konfigurace baterie.",
                 "data": {
                     "battery_voltage": "Napětí baterie",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Konfigurace monitoru BM6",
+                "title": "Konfigurace monitoru BM7",
                 "description": "Vlastní parametry konfigurace baterie.",
                 "data": {
                     "custom_dvr_min": "Minimální vykládací napětí (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Algoritmus výpočtu baterie",
                         "state": {
-                            "by_device": "Vypočítáno zařízením BM6",
+                            "by_device": "Vypočítáno zařízením BM7",
                             "soc_sod": "Vypočteno ze stavu nabíjení/výboje (Soc/SOD)",
                             "cvr_dvr": "Vypočteno v napětí nabíjení/vypouštění (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Zavřeno zařízením BM6",
+                "by_device": "Zavřeno zařízením BM7",
                 "soc_sod": "Akceptor ze stavu změny/odesílání (SOC/SOD)",
                 "cvr_dvr": "Acceple Charaction/Odeslat Time (CVR/DVR)"
             }

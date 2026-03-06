@@ -1,12 +1,12 @@
 {
-    "title": "Monitor de baterie BM6",
+    "title": "Monitor de baterie BM7",
     "config": {
         "step": {
             "user": {
-                "title": "Configurarea noului monitor BM6",
+                "title": "Configurarea noului monitor BM7",
                 "description": "Parametri de configurare a dispozitivului de bază.",
                 "data": {
-                    "device_address": "Nume/adresă BM6",
+                    "device_address": "Nume/adresă BM7",
                     "state_algorithm": "Algoritmul de calcul al bateriei",
                     "update_interval": "Interval de actualizare a datelor",
                     "voltage_offset": "Corecția tensiunii",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Configurarea noului monitor BM6",
+                "title": "Configurarea noului monitor BM7",
                 "description": "Parametri de configurare a bateriei.",
                 "data": {
                     "battery_voltage": "Tensiunea bateriei",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Configurația monitorului BM6",
+                "title": "Configurația monitorului BM7",
                 "description": "Parametri personalizați de configurare a bateriei.",
                 "data": {
                     "custom_dvr_min": "Tensiune minimă de descărcare (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Nu au fost găsite dispozitive BM6."
+            "no_devices_found": "Nu au fost găsite dispozitive BM7."
         },
         "error": {
             "max_less_than_min": "Valoarea maximă a tensiunii trebuie să fie mai mare decât minimul.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Reconfigurarea monitorului BM6",
+                "title": "Reconfigurarea monitorului BM7",
                 "description": "Parametri de configurare a dispozitivului de bază.",
                 "data": {
                     "state_algorithm": "Algoritmul de calcul al bateriei",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Configurarea noului monitor BM6",
+                "title": "Configurarea noului monitor BM7",
                 "description": "Parametri de configurare a bateriei.",
                 "data": {
                     "battery_voltage": "Tensiunea bateriei",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Configurația monitorului BM6",
+                "title": "Configurația monitorului BM7",
                 "description": "Parametri personalizați de configurare a bateriei.",
                 "data": {
                     "custom_dvr_min": "Tensiune minimă de descărcare (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Algoritmul de calcul al bateriei",
                         "state": {
-                            "by_device": "Calculat de dispozitivul BM6",
+                            "by_device": "Calculat de dispozitivul BM7",
                             "soc_sod": "Calculat din starea de încărcare/descărcare (SOC/SOD)",
                             "cvr_dvr": "Calculat în tensiunea de încărcare/descărcare (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Închis de dispozitivul BM6",
+                "by_device": "Închis de dispozitivul BM7",
                 "soc_sod": "Acceptor din starea de schimbare/trimitere (SOC/SOD)",
                 "cvr_dvr": "Charaction ACCEPLE/TIMARE (CVR/DVR)"
             }

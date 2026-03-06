@@ -1,12 +1,12 @@
 {
-    "title": "BM6 -batterijmonitor",
+    "title": "BM7 -batterijmonitor",
     "config": {
         "step": {
             "user": {
-                "title": "Configuratie van de nieuwe BM6 -monitor",
+                "title": "Configuratie van de nieuwe BM7 -monitor",
                 "description": "Basisapparaatconfiguratieparameters.",
                 "data": {
-                    "device_address": "Naam/adres BM6",
+                    "device_address": "Naam/adres BM7",
                     "state_algorithm": "Batterijberekeningsalgoritme",
                     "update_interval": "Gegevensupdate -interval",
                     "voltage_offset": "Spanningscorrectie",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Configuratie van de nieuwe BM6 -monitor",
+                "title": "Configuratie van de nieuwe BM7 -monitor",
                 "description": "Batterijconfiguratieparameters.",
                 "data": {
                     "battery_voltage": "Batterijspanning",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor Configuratie",
+                "title": "BM7 Monitor Configuratie",
                 "description": "Aangepaste batterijconfiguratieparameters.",
                 "data": {
                     "custom_dvr_min": "Minimale losspanning (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Er zijn geen BM6 -apparaten gevonden."
+            "no_devices_found": "Er zijn geen BM7 -apparaten gevonden."
         },
         "error": {
             "max_less_than_min": "De maximale spanningswaarde moet groter zijn dan het minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -configuratie van de BM6 -monitor",
+                "title": "Re -configuratie van de BM7 -monitor",
                 "description": "Basisapparaatconfiguratieparameters.",
                 "data": {
                     "state_algorithm": "Batterijberekeningsalgoritme",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Configuratie van de nieuwe BM6 -monitor",
+                "title": "Configuratie van de nieuwe BM7 -monitor",
                 "description": "Batterijconfiguratieparameters.",
                 "data": {
                     "battery_voltage": "Batterijspanning",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor Configuratie",
+                "title": "BM7 Monitor Configuratie",
                 "description": "Aangepaste batterijconfiguratieparameters.",
                 "data": {
                     "custom_dvr_min": "Minimale losspanning (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Batterijberekeningsalgoritme",
                         "state": {
-                            "by_device": "Berekend door het BM6 -apparaat",
+                            "by_device": "Berekend door het BM7 -apparaat",
                             "soc_sod": "Berekend uit de toestand van lading/ontlading (SOC/SOD)",
                             "cvr_dvr": "Berekend in laad-/ontladingsspanning (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Gesloten door het BM6 -apparaat",
+                "by_device": "Gesloten door het BM7 -apparaat",
                 "soc_sod": "Acceptor van de wijziging/verzendstatus (SOC/SOD)",
                 "cvr_dvr": "ACCEPLE Charaction/Sending Time (CVR/DVR)"
             }

@@ -1,12 +1,12 @@
 {
-    "title": "BM6 akumuliatoriaus monitorius",
+    "title": "BM7 akumuliatoriaus monitorius",
     "config": {
         "step": {
             "user": {
-                "title": "Naujojo BM6 monitoriaus konfigūracija",
+                "title": "Naujojo BM7 monitoriaus konfigūracija",
                 "description": "Pagrindiniai įrenginio konfigūracijos parametrai.",
                 "data": {
-                    "device_address": "Vardas/adresas BM6",
+                    "device_address": "Vardas/adresas BM7",
                     "state_algorithm": "Akumuliatoriaus skaičiavimo algoritmas",
                     "update_interval": "Duomenų atnaujinimo intervalas",
                     "voltage_offset": "Įtampos korekcija",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Naujojo BM6 monitoriaus konfigūracija",
+                "title": "Naujojo BM7 monitoriaus konfigūracija",
                 "description": "Akumuliatoriaus konfigūracijos parametrai.",
                 "data": {
                     "battery_voltage": "Akumuliatoriaus įtampa",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitoriaus konfigūracija",
+                "title": "BM7 monitoriaus konfigūracija",
                 "description": "Pasirinktiniai akumuliatoriaus konfigūracijos parametrai.",
                 "data": {
                     "custom_dvr_min": "Minimali iškrovimo įtampa (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Nerasta BM6 įrenginių."
+            "no_devices_found": "Nerasta BM7 įrenginių."
         },
         "error": {
             "max_less_than_min": "Maksimali įtampos vertė turi būti didesnė nei minimali.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "BM6 monitoriaus pakartotinis konfigūracija",
+                "title": "BM7 monitoriaus pakartotinis konfigūracija",
                 "description": "Pagrindiniai įrenginio konfigūracijos parametrai.",
                 "data": {
                     "state_algorithm": "Akumuliatoriaus skaičiavimo algoritmas",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Naujojo BM6 monitoriaus konfigūracija",
+                "title": "Naujojo BM7 monitoriaus konfigūracija",
                 "description": "Akumuliatoriaus konfigūracijos parametrai.",
                 "data": {
                     "battery_voltage": "Akumuliatoriaus įtampa",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitoriaus konfigūracija",
+                "title": "BM7 monitoriaus konfigūracija",
                 "description": "Pasirinktiniai akumuliatoriaus konfigūracijos parametrai.",
                 "data": {
                     "custom_dvr_min": "Minimali iškrovimo įtampa (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Akumuliatoriaus skaičiavimo algoritmas",
                         "state": {
-                            "by_device": "Apskaičiuota pagal BM6 įrenginį",
+                            "by_device": "Apskaičiuota pagal BM7 įrenginį",
                             "soc_sod": "Apskaičiuota pagal įkrovos/išleidimo būseną (SOC/SOD)",
                             "cvr_dvr": "Apskaičiuota įkrovimo/išleidimo įtampoje (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Uždarytas pagal BM6 įrenginį",
+                "by_device": "Uždarytas pagal BM7 įrenginį",
                 "soc_sod": "Auceptorius iš pakeitimo/siuntimo būsenos (SOC/SOD)",
                 "cvr_dvr": "„Flecple Charaction“/siuntimo laikas (CVR/DVR)"
             }

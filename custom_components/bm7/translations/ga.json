@@ -1,12 +1,12 @@
 {
-    "title": "Monatóir ceallraí BM6",
+    "title": "Monatóir ceallraí BM7",
     "config": {
         "step": {
             "user": {
-                "title": "Cumraíocht an Mhonatóir BM6 nua",
+                "title": "Cumraíocht an Mhonatóir BM7 nua",
                 "description": "Paraiméadair chumraíochta bhunúsach feiste.",
                 "data": {
-                    "device_address": "Ainm/Seoladh BM6",
+                    "device_address": "Ainm/Seoladh BM7",
                     "state_algorithm": "Algartam Ríomh Ceallraí",
                     "update_interval": "Eatramh nuashonraithe sonraí",
                     "voltage_offset": "Ceartú voltais",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Cumraíocht an Mhonatóir BM6 nua",
+                "title": "Cumraíocht an Mhonatóir BM7 nua",
                 "description": "Paraiméadair chumraíochta ceallraí.",
                 "data": {
                     "battery_voltage": "Voltas ceallraí",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Cumraíocht Monatóireachta BM6 BM6",
+                "title": "Cumraíocht Monatóireachta BM7",
                 "description": "Paraiméadair chumraíochta ceallraí saincheaptha.",
                 "data": {
                     "custom_dvr_min": "Voltas Díluchtaithe Íosta (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Níor aimsíodh aon fheistí BM6."
+            "no_devices_found": "Níor aimsíodh aon fheistí BM7."
         },
         "error": {
             "max_less_than_min": "Caithfidh an t -uasluach voltais a bheith níos mó ná an t -íosmhéid.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Athchumraíocht an mhonatóra BM6",
+                "title": "Athchumraíocht an mhonatóra BM7",
                 "description": "Paraiméadair chumraíochta bhunúsach feiste.",
                 "data": {
                     "state_algorithm": "Algartam Ríomh Ceallraí",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Cumraíocht an Mhonatóir BM6 nua",
+                "title": "Cumraíocht an Mhonatóir BM7 nua",
                 "description": "Paraiméadair chumraíochta ceallraí.",
                 "data": {
                     "battery_voltage": "Voltas ceallraí",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Cumraíocht Monatóireachta BM6 BM6",
+                "title": "Cumraíocht Monatóireachta BM7",
                 "description": "Paraiméadair chumraíochta ceallraí saincheaptha.",
                 "data": {
                     "custom_dvr_min": "Voltas Díluchtaithe Íosta (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Algartam Ríomh Ceallraí",
                         "state": {
-                            "by_device": "Arna ríomh ag an bhfeiste BM6",
+                            "by_device": "Arna ríomh ag an bhfeiste BM7",
                             "soc_sod": "Arna ríomh ón staid muirir/urscaoilte (SOC/SOD)",
                             "cvr_dvr": "Arna ríomh i voltas muirir/urscaoilte (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Dúnta ag an bhfeiste BM6",
+                "by_device": "Dúnta ag an bhfeiste BM7",
                 "soc_sod": "Glactar ón Stát Athrú/Seol (SOC/SOD)",
                 "cvr_dvr": "ACCEPLE CHARCION/AMA SELD (CVR/DVR)"
             }

@@ -1,12 +1,12 @@
 {
-    "title": "BM6 rafhlöðuskjár",
+    "title": "BM7 rafhlöðuskjár",
     "config": {
         "step": {
             "user": {
-                "title": "Stillingar nýja BM6 skjásins",
+                "title": "Stillingar nýja BM7 skjásins",
                 "description": "Grunnstillingarstillingar.",
                 "data": {
-                    "device_address": "Nafn/heimilisfang BM6",
+                    "device_address": "Nafn/heimilisfang BM7",
                     "state_algorithm": "Ragnaralgrími rafhlöðu",
                     "update_interval": "Gagnauppfærslu bil",
                     "voltage_offset": "Spennaleiðrétting",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Stillingar nýja BM6 skjásins",
+                "title": "Stillingar nýja BM7 skjásins",
                 "description": "Stillingar rafhlöðu.",
                 "data": {
                     "battery_voltage": "Rafhlöðuspenna",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor stillingar",
+                "title": "BM7 Monitor stillingar",
                 "description": "Sérsniðnar stillingar rafhlöðu.",
                 "data": {
                     "custom_dvr_min": "Lágmarks losunarspenna (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Engin BM6 tæki fundust."
+            "no_devices_found": "Engin BM7 tæki fundust."
         },
         "error": {
             "max_less_than_min": "Hámarksspennugildi verður að vera meira en lágmarkið.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -stilling BM6 skjásins",
+                "title": "Re -stilling BM7 skjásins",
                 "description": "Grunnstillingarstillingar.",
                 "data": {
                     "state_algorithm": "Ragnaralgrími rafhlöðu",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Stillingar nýja BM6 skjásins",
+                "title": "Stillingar nýja BM7 skjásins",
                 "description": "Stillingar rafhlöðu.",
                 "data": {
                     "battery_voltage": "Rafhlöðuspenna",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor stillingar",
+                "title": "BM7 Monitor stillingar",
                 "description": "Sérsniðnar stillingar rafhlöðu.",
                 "data": {
                     "custom_dvr_min": "Lágmarks losunarspenna (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Ragnaralgrími rafhlöðu",
                         "state": {
-                            "by_device": "Reiknað með BM6 tækinu",
+                            "by_device": "Reiknað með BM7 tækinu",
                             "soc_sod": "Reiknað út frá hleðslu/útskrift (SOC/SOD)",
                             "cvr_dvr": "Reiknuð í hleðslu/losunarspennu (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Lokað með BM6 tækinu",
+                "by_device": "Lokað með BM7 tækinu",
                 "soc_sod": "Samþykki frá breytingunni/sendingarástandi (SOC/SOD)",
                 "cvr_dvr": "Acceple charaction/sendingartími (CVR/DVR)"
             }

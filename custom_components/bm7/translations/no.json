@@ -1,12 +1,12 @@
 {
-    "title": "BM6 -batteriovervåking",
+    "title": "BM7 -batteriovervåking",
     "config": {
         "step": {
             "user": {
-                "title": "Konfigurasjon av den nye BM6 -skjermen",
+                "title": "Konfigurasjon av den nye BM7 -skjermen",
                 "description": "Grunnleggende enhetskonfigurasjonsparametere.",
                 "data": {
-                    "device_address": "Navn/adresse BM6",
+                    "device_address": "Navn/adresse BM7",
                     "state_algorithm": "Batteribegebringsalgoritme",
                     "update_interval": "Dataoppdateringsintervall",
                     "voltage_offset": "Spenningskorreksjon",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurasjon av den nye BM6 -skjermen",
+                "title": "Konfigurasjon av den nye BM7 -skjermen",
                 "description": "Batterikonfigurasjonsparametere.",
                 "data": {
                     "battery_voltage": "Batterispenning",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor -konfigurasjon",
+                "title": "BM7 Monitor -konfigurasjon",
                 "description": "Tilpassede batterikonfigurasjonsparametere.",
                 "data": {
                     "custom_dvr_min": "Minimum lossingsspenning (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Ingen BM6 -enheter ble funnet."
+            "no_devices_found": "Ingen BM7 -enheter ble funnet."
         },
         "error": {
             "max_less_than_min": "Maksimal spenningsverdi må være større enn minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -konfigurasjon av BM6 -skjermen",
+                "title": "Re -konfigurasjon av BM7 -skjermen",
                 "description": "Grunnleggende enhetskonfigurasjonsparametere.",
                 "data": {
                     "state_algorithm": "Batteribegebringsalgoritme",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurasjon av den nye BM6 -skjermen",
+                "title": "Konfigurasjon av den nye BM7 -skjermen",
                 "description": "Batterikonfigurasjonsparametere.",
                 "data": {
                     "battery_voltage": "Batterispenning",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor -konfigurasjon",
+                "title": "BM7 Monitor -konfigurasjon",
                 "description": "Tilpassede batterikonfigurasjonsparametere.",
                 "data": {
                     "custom_dvr_min": "Minimum lossingsspenning (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Batteribegebringsalgoritme",
                         "state": {
-                            "by_device": "Beregnet av BM6 -enheten",
+                            "by_device": "Beregnet av BM7 -enheten",
                             "soc_sod": "Beregnet fra tilstanden for ladning/utladning (SOC/SOD)",
                             "cvr_dvr": "Beregnet i lading/utladningsspenning (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Lukket av BM6 -enheten",
+                "by_device": "Lukket av BM7 -enheten",
                 "soc_sod": "Akseptor fra endringen/sending av staten (SOC/SOD)",
                 "cvr_dvr": "Acceple Characction/Sending Time (CVR/DVR)"
             }

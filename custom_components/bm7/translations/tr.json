@@ -1,12 +1,12 @@
 {
-    "title": "BM6 pil monitörü",
+    "title": "BM7 pil monitörü",
     "config": {
         "step": {
             "user": {
-                "title": "Yeni BM6 monitörünün yapılandırması",
+                "title": "Yeni BM7 monitörünün yapılandırması",
                 "description": "Temel cihaz yapılandırma parametreleri.",
                 "data": {
-                    "device_address": "Adı/Adres BM6",
+                    "device_address": "Adı/Adres BM7",
                     "state_algorithm": "Pil hesaplama algoritması",
                     "update_interval": "Veri Güncelleme Aralığı",
                     "voltage_offset": "Voltaj düzeltmesi",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Yeni BM6 monitörünün yapılandırması",
+                "title": "Yeni BM7 monitörünün yapılandırması",
                 "description": "Pil yapılandırma parametreleri.",
                 "data": {
                     "battery_voltage": "Pil voltajı",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitör Yapılandırması",
+                "title": "BM7 Monitör Yapılandırması",
                 "description": "Özel pil yapılandırma parametreleri.",
                 "data": {
                     "custom_dvr_min": "Minimum boşaltma voltajı (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "BM6 cihazı bulunamadı."
+            "no_devices_found": "BM7 cihazı bulunamadı."
         },
         "error": {
             "max_less_than_min": "Maksimum voltaj değeri minimumdan büyük olmalıdır.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "BM6 monitörünün yeniden yapılandırılması",
+                "title": "BM7 monitörünün yeniden yapılandırılması",
                 "description": "Temel cihaz yapılandırma parametreleri.",
                 "data": {
                     "state_algorithm": "Pil hesaplama algoritması",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Yeni BM6 monitörünün yapılandırması",
+                "title": "Yeni BM7 monitörünün yapılandırması",
                 "description": "Pil yapılandırma parametreleri.",
                 "data": {
                     "battery_voltage": "Pil voltajı",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitör Yapılandırması",
+                "title": "BM7 Monitör Yapılandırması",
                 "description": "Özel pil yapılandırma parametreleri.",
                 "data": {
                     "custom_dvr_min": "Minimum boşaltma voltajı (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Pil hesaplama algoritması",
                         "state": {
-                            "by_device": "BM6 cihazı tarafından hesaplandı",
+                            "by_device": "BM7 cihazı tarafından hesaplandı",
                             "soc_sod": "Yük/deşarj durumundan hesaplanır (SOC/SOD)",
                             "cvr_dvr": "Şarj/deşarj voltajında ​​hesaplanır (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "BM6 cihazı tarafından kapalı",
+                "by_device": "BM7 cihazı tarafından kapalı",
                 "soc_sod": "Değişim/Gönderme Durumundan Alacaklı (SOC/SOD)",
                 "cvr_dvr": "Acceple Charaction/Gönderme Süresi (CVR/DVR)"
             }

@@ -1,12 +1,12 @@
 {
-    "title": "BM6 -akkumonitori",
+    "title": "BM7 -akkumonitori",
     "config": {
         "step": {
             "user": {
-                "title": "Uuden BM6 -näytön kokoonpano",
+                "title": "Uuden BM7 -näytön kokoonpano",
                 "description": "Peruslaitteen määritysparametrit.",
                 "data": {
-                    "device_address": "Nimi/osoite BM6",
+                    "device_address": "Nimi/osoite BM7",
                     "state_algorithm": "Akun laskentaalgoritmi",
                     "update_interval": "Tietojen päivitysväli",
                     "voltage_offset": "Jännitekorjaus",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Uuden BM6 -näytön kokoonpano",
+                "title": "Uuden BM7 -näytön kokoonpano",
                 "description": "Akun konfigurointiparametrit.",
                 "data": {
                     "battery_voltage": "Akkujännite",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor -kokoonpano",
+                "title": "BM7 Monitor -kokoonpano",
                 "description": "Mukautettu akun kokoonpanoparametrit.",
                 "data": {
                     "custom_dvr_min": "Vähimmäisjännite (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "BM6 -laitteita ei löytynyt."
+            "no_devices_found": "BM7 -laitteita ei löytynyt."
         },
         "error": {
             "max_less_than_min": "Suurin jännitteen on oltava suurempi kuin minimi.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "BM6 -näytön uudelleenkonfigurointi",
+                "title": "BM7 -näytön uudelleenkonfigurointi",
                 "description": "Peruslaitteen määritysparametrit.",
                 "data": {
                     "state_algorithm": "Akun laskentaalgoritmi",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Uuden BM6 -näytön kokoonpano",
+                "title": "Uuden BM7 -näytön kokoonpano",
                 "description": "Akun konfigurointiparametrit.",
                 "data": {
                     "battery_voltage": "Akkujännite",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor -kokoonpano",
+                "title": "BM7 Monitor -kokoonpano",
                 "description": "Mukautettu akun kokoonpanoparametrit.",
                 "data": {
                     "custom_dvr_min": "Vähimmäisjännite (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Akun laskentaalgoritmi",
                         "state": {
-                            "by_device": "Laske BM6 -laite",
+                            "by_device": "Laske BM7 -laite",
                             "soc_sod": "Laskettu varaus-/purkaustilasta (Soc/SOD)",
                             "cvr_dvr": "Laskettu lataus-/purkausjännitteessä (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "BM6 -laitteen sulkeminen",
+                "by_device": "BM7 -laitteen sulkeminen",
                 "soc_sod": "Hyväksyntä muutos-/lähetystilasta (Soc/SOD)",
                 "cvr_dvr": "ACCEPLE -merkki-/lähetysaika (CVR/DVR)"
             }

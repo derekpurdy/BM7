@@ -1,12 +1,12 @@
 {
-    "title": "BM6 Batteri Monitor",
+    "title": "BM7 Batteri Monitor",
     "config": {
         "step": {
             "user": {
-                "title": "Konfiguration af den nye BM6 -skærm",
+                "title": "Konfiguration af den nye BM7 -skærm",
                 "description": "Grundlæggende enhedskonfigurationsparametre.",
                 "data": {
-                    "device_address": "Navn/adresse BM6",
+                    "device_address": "Navn/adresse BM7",
                     "state_algorithm": "Batteri beregningsalgoritme",
                     "update_interval": "Dataopdateringsinterval",
                     "voltage_offset": "Spændingskorrektion",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfiguration af den nye BM6 -skærm",
+                "title": "Konfiguration af den nye BM7 -skærm",
                 "description": "Parametre for batterikonfiguration.",
                 "data": {
                     "battery_voltage": "Batterispænding",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor Configuration",
+                "title": "BM7 Monitor Configuration",
                 "description": "Brugerdefinerede batterikonfigurationsparametre.",
                 "data": {
                     "custom_dvr_min": "Minimum losningsspænding (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Ingen BM6 -enheder blev fundet."
+            "no_devices_found": "Ingen BM7 -enheder blev fundet."
         },
         "error": {
             "max_less_than_min": "Den maksimale spændingsværdi skal være større end minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Re -konfiguration af BM6 -skærmen",
+                "title": "Re -konfiguration af BM7 -skærmen",
                 "description": "Grundlæggende enhedskonfigurationsparametre.",
                 "data": {
                     "state_algorithm": "Batteri beregningsalgoritme",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfiguration af den nye BM6 -skærm",
+                "title": "Konfiguration af den nye BM7 -skærm",
                 "description": "Parametre for batterikonfiguration.",
                 "data": {
                     "battery_voltage": "Batterispænding",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor Configuration",
+                "title": "BM7 Monitor Configuration",
                 "description": "Brugerdefinerede batterikonfigurationsparametre.",
                 "data": {
                     "custom_dvr_min": "Minimum losningsspænding (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Batteri beregningsalgoritme",
                         "state": {
-                            "by_device": "Beregnet af BM6 -enheden",
+                            "by_device": "Beregnet af BM7 -enheden",
                             "soc_sod": "Beregnet ud fra ladningstilstanden/decharge (SOC/SOD)",
                             "cvr_dvr": "Beregnet ved opladning/udladningsspænding (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Lukket af BM6 -enheden",
+                "by_device": "Lukket af BM7 -enheden",
                 "soc_sod": "Acceptor fra ændringen/afsendelse af tilstand (SOC/SOD)",
                 "cvr_dvr": "Acceple Charaction/Sending Time (CVR/DVR)"
             }

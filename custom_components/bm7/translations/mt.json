@@ -1,12 +1,12 @@
 {
-    "title": "Monitor tal-batterija BM6",
+    "title": "Monitor tal-batterija BM7",
     "config": {
         "step": {
             "user": {
-                "title": "Konfigurazzjoni tal-monitor BM6 il-ġdid",
+                "title": "Konfigurazzjoni tal-monitor BM7 il-ġdid",
                 "description": "Parametri bażiċi tal-konfigurazzjoni tal-apparat.",
                 "data": {
-                    "device_address": "Isem / Indirizz BM6",
+                    "device_address": "Isem / Indirizz BM7",
                     "state_algorithm": "Algoritmu tal-Kalkolu tal-Batterija",
                     "update_interval": "Intervall ta 'aġġornament tad-data",
                     "voltage_offset": "Korrezzjoni tal-Vultaġġ",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurazzjoni tal-monitor BM6 il-ġdid",
+                "title": "Konfigurazzjoni tal-monitor BM7 il-ġdid",
                 "description": "Parametri tal-konfigurazzjoni tal-batterija.",
                 "data": {
                     "battery_voltage": "Vultaġġ tal-batterija",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitoraġġ tal-Konfigurazzjoni",
+                "title": "BM7 Monitoraġġ tal-Konfigurazzjoni",
                 "description": "Parametri tal-konfigurazzjoni tal-batterija tad-dwana.",
                 "data": {
                     "custom_dvr_min": "Vultaġġ tal-Ħatt Minimu (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Ma nstabu l-ebda apparat BM6."
+            "no_devices_found": "Ma nstabu l-ebda apparat BM7."
         },
         "error": {
             "max_less_than_min": "Il-valur massimu tal-vultaġġ għandu jkun ikbar mill-minimu.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Mill-ġdid il-konfigurazzjoni tal-monitor BM6",
+                "title": "Mill-ġdid il-konfigurazzjoni tal-monitor BM7",
                 "description": "Parametri bażiċi tal-konfigurazzjoni tal-apparat.",
                 "data": {
                     "state_algorithm": "Algoritmu tal-Kalkolu tal-Batterija",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurazzjoni tal-monitor BM6 il-ġdid",
+                "title": "Konfigurazzjoni tal-monitor BM7 il-ġdid",
                 "description": "Parametri tal-konfigurazzjoni tal-batterija.",
                 "data": {
                     "battery_voltage": "Vultaġġ tal-batterija",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitoraġġ tal-Konfigurazzjoni",
+                "title": "BM7 Monitoraġġ tal-Konfigurazzjoni",
                 "description": "Parametri tal-konfigurazzjoni tal-batterija tad-dwana.",
                 "data": {
                     "custom_dvr_min": "Vultaġġ tal-Ħatt Minimu (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Algoritmu tal-Kalkolu tal-Batterija",
                         "state": {
-                            "by_device": "Ikkalkulat mill-apparat BM6",
+                            "by_device": "Ikkalkulat mill-apparat BM7",
                             "soc_sod": "Ikkalkulat mill-istat tal-ħlas / kwittanza (SOC / SOD)",
                             "cvr_dvr": "Ikkalkulat fil-vultaġġ tal-iċċarġjar / kwittanza (CVR / DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Magħluq mill-apparat BM6",
+                "by_device": "Magħluq mill-apparat BM7",
                 "soc_sod": "Aċċettatur mill-Bidla / Stat li Jibgħat (SOC / SOD)",
                 "cvr_dvr": "Acceple Charaction / Tibgħat Ħin (CVR / DVR)"
             }

@@ -1,12 +1,12 @@
 {
-    "title": "BM6 akumulatora monitors",
+    "title": "BM7 akumulatora monitors",
     "config": {
         "step": {
             "user": {
-                "title": "Jaunā BM6 monitora konfigurācija",
+                "title": "Jaunā BM7 monitora konfigurācija",
                 "description": "Pamata ierīces konfigurācijas parametri.",
                 "data": {
-                    "device_address": "Vārds/adrese BM6",
+                    "device_address": "Vārds/adrese BM7",
                     "state_algorithm": "Akumulatora aprēķina algoritms",
                     "update_interval": "Datu atjaunināšanas intervāls",
                     "voltage_offset": "Sprieguma korekcija",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Jaunā BM6 monitora konfigurācija",
+                "title": "Jaunā BM7 monitora konfigurācija",
                 "description": "Akumulatora konfigurācijas parametri.",
                 "data": {
                     "battery_voltage": "Akumulatora spriegums",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitora konfigurācija",
+                "title": "BM7 monitora konfigurācija",
                 "description": "Pielāgoti akumulatora konfigurācijas parametri.",
                 "data": {
                     "custom_dvr_min": "Minimālais izkraušanas spriegums (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "BM6 ierīces netika atrastas."
+            "no_devices_found": "BM7 ierīces netika atrastas."
         },
         "error": {
             "max_less_than_min": "Maksimālā sprieguma vērtībai jābūt lielākai par minimālo.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "BM6 monitora re -konfigurācija",
+                "title": "BM7 monitora re -konfigurācija",
                 "description": "Pamata ierīces konfigurācijas parametri.",
                 "data": {
                     "state_algorithm": "Akumulatora aprēķina algoritms",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Jaunā BM6 monitora konfigurācija",
+                "title": "Jaunā BM7 monitora konfigurācija",
                 "description": "Akumulatora konfigurācijas parametri.",
                 "data": {
                     "battery_voltage": "Akumulatora spriegums",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitora konfigurācija",
+                "title": "BM7 monitora konfigurācija",
                 "description": "Pielāgoti akumulatora konfigurācijas parametri.",
                 "data": {
                     "custom_dvr_min": "Minimālais izkraušanas spriegums (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Akumulatora aprēķina algoritms",
                         "state": {
-                            "by_device": "Aprēķināts ar BM6 ierīci",
+                            "by_device": "Aprēķināts ar BM7 ierīci",
                             "soc_sod": "Aprēķināts no lādiņa/izdalīšanās stāvokļa (Soc/SOD)",
                             "cvr_dvr": "Aprēķināts lādēšanas/izlādes spriegumā (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Aizvērts ar BM6 ierīci",
+                "by_device": "Aizvērts ar BM7 ierīci",
                 "soc_sod": "Akceptors no izmaiņu/nosūtīšanas stāvokļa (Soc/SOD)",
                 "cvr_dvr": "Acceple Charaction/nosūtīšanas laiks (CVR/DVR)"
             }

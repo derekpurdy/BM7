@@ -1,12 +1,12 @@
 {
-    "title": "Monitor i baterisë BM6",
+    "title": "Monitor i baterisë BM7",
     "config": {
         "step": {
             "user": {
-                "title": "Konfigurimi i monitorit të ri BM6",
+                "title": "Konfigurimi i monitorit të ri BM7",
                 "description": "Parametrat themelorë të konfigurimit të pajisjes.",
                 "data": {
-                    "device_address": "Emri/Adresa BM6",
+                    "device_address": "Emri/Adresa BM7",
                     "state_algorithm": "Algoritmi i llogaritjes së baterisë",
                     "update_interval": "Intervali i azhurnimit të të dhënave",
                     "voltage_offset": "Korrigjim i tensionit",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurimi i monitorit të ri BM6",
+                "title": "Konfigurimi i monitorit të ri BM7",
                 "description": "Parametrat e konfigurimit të baterisë.",
                 "data": {
                     "battery_voltage": "Tension i baterisë",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Konfigurimi i monitorit BM6",
+                "title": "Konfigurimi i monitorit BM7",
                 "description": "Parametrat e konfigurimit të baterisë me porosi.",
                 "data": {
                     "custom_dvr_min": "Tensioni minimal i shkarkimit (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Asnjë pajisje BM6 nuk u gjet."
+            "no_devices_found": "Asnjë pajisje BM7 nuk u gjet."
         },
         "error": {
             "max_less_than_min": "Vlera maksimale e tensionit duhet të jetë më e madhe se minimumi.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Ri -konfigurimi i monitorit BM6",
+                "title": "Ri -konfigurimi i monitorit BM7",
                 "description": "Parametrat themelorë të konfigurimit të pajisjes.",
                 "data": {
                     "state_algorithm": "Algoritmi i llogaritjes së baterisë",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfigurimi i monitorit të ri BM6",
+                "title": "Konfigurimi i monitorit të ri BM7",
                 "description": "Parametrat e konfigurimit të baterisë.",
                 "data": {
                     "battery_voltage": "Tension i baterisë",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Konfigurimi i monitorit BM6",
+                "title": "Konfigurimi i monitorit BM7",
                 "description": "Parametrat e konfigurimit të baterisë me porosi.",
                 "data": {
                     "custom_dvr_min": "Tensioni minimal i shkarkimit (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Algoritmi i llogaritjes së baterisë",
                         "state": {
-                            "by_device": "Llogaritur nga pajisja BM6",
+                            "by_device": "Llogaritur nga pajisja BM7",
                             "soc_sod": "Llogaritur nga gjendja/shkarkimi (SOC/SOD)",
                             "cvr_dvr": "Llogaritur në tensionin e karikimit/shkarkimit (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Mbyllur nga pajisja BM6",
+                "by_device": "Mbyllur nga pajisja BM7",
                 "soc_sod": "Pranues nga Shteti i Ndryshimit/Dërgimit (SOC/SOD)",
                 "cvr_dvr": "Karakteristika/Koha e dërgimit të Accesple (CVR/DVR)"
             }

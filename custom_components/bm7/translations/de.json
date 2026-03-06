@@ -1,12 +1,12 @@
 {
-    "title": "BM6 Batteriemonitor",
+    "title": "BM7 Batteriemonitor",
     "config": {
         "step": {
             "user": {
-                "title": "Konfiguration des neuen BM6 -Monitors",
+                "title": "Konfiguration des neuen BM7 -Monitors",
                 "description": "Grundlegende Gerätekonfigurationsparameter.",
                 "data": {
-                    "device_address": "Name/Adresse BM6",
+                    "device_address": "Name/Adresse BM7",
                     "state_algorithm": "Batterieberechnungsalgorithmus",
                     "update_interval": "Datenaktualisierungsintervall",
                     "voltage_offset": "Spannungskorrektur",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfiguration des neuen BM6 -Monitors",
+                "title": "Konfiguration des neuen BM7 -Monitors",
                 "description": "Batteriekonfigurationsparameter.",
                 "data": {
                     "battery_voltage": "Batteriespannung",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor -Konfiguration",
+                "title": "BM7 Monitor -Konfiguration",
                 "description": "Benutzerdefinierte Batteriekonfigurationsparameter.",
                 "data": {
                     "custom_dvr_min": "Minimum Entladenspannung (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Es wurden keine BM6 -Geräte gefunden."
+            "no_devices_found": "Es wurden keine BM7 -Geräte gefunden."
         },
         "error": {
             "max_less_than_min": "Der maximale Spannungswert muss größer sein als das Minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Rekonfiguration des BM6 -Monitors",
+                "title": "Rekonfiguration des BM7 -Monitors",
                 "description": "Grundlegende Gerätekonfigurationsparameter.",
                 "data": {
                     "state_algorithm": "Batterieberechnungsalgorithmus",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfiguration des neuen BM6 -Monitors",
+                "title": "Konfiguration des neuen BM7 -Monitors",
                 "description": "Batteriekonfigurationsparameter.",
                 "data": {
                     "battery_voltage": "Batteriespannung",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 Monitor -Konfiguration",
+                "title": "BM7 Monitor -Konfiguration",
                 "description": "Benutzerdefinierte Batteriekonfigurationsparameter.",
                 "data": {
                     "custom_dvr_min": "Minimum Entladenspannung (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Batterieberechnungsalgorithmus",
                         "state": {
-                            "by_device": "Berechnet durch das BM6 -Gerät",
+                            "by_device": "Berechnet durch das BM7 -Gerät",
                             "soc_sod": "Berechnet aus dem Ladungszustand/Entlassungszustand (SOC/SOD)",
                             "cvr_dvr": "Berechnet bei der Lade-/Entladungsspannung (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Vom BM6 -Gerät geschlossen",
+                "by_device": "Vom BM7 -Gerät geschlossen",
                 "soc_sod": "Akzeptor aus dem Änderungs-/Sendenstatus (SOC/SOD)",
                 "cvr_dvr": "Akceple MAARKTION/SENDING TIME (CVR/DVR)"
             }

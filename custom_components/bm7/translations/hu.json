@@ -1,12 +1,12 @@
 {
-    "title": "BM6 akkumulátor monitor",
+    "title": "BM7 akkumulátor monitor",
     "config": {
         "step": {
             "user": {
-                "title": "Az új BM6 monitor konfigurációja",
+                "title": "Az új BM7 monitor konfigurációja",
                 "description": "Alapvető eszköz konfigurációs paraméterek.",
                 "data": {
-                    "device_address": "Név/cím BM6",
+                    "device_address": "Név/cím BM7",
                     "state_algorithm": "Akkumulátor kiszámítási algoritmus",
                     "update_interval": "Adatfrissítési intervallum",
                     "voltage_offset": "Feszültségkorrekció",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Az új BM6 monitor konfigurációja",
+                "title": "Az új BM7 monitor konfigurációja",
                 "description": "Akkumulátor konfigurációs paraméterek.",
                 "data": {
                     "battery_voltage": "Akkumulátor feszültség",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitor konfigurációja",
+                "title": "BM7 monitor konfigurációja",
                 "description": "Egyéni akkumulátor konfigurációs paraméterek.",
                 "data": {
                     "custom_dvr_min": "Minimális kirakodási feszültség (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Nem találtak BM6 eszközöket."
+            "no_devices_found": "Nem találtak BM7 eszközöket."
         },
         "error": {
             "max_less_than_min": "A maximális feszültségértéknek nagyobbnak kell lennie, mint a minimum.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "A BM6 monitor újkonfigurálása",
+                "title": "A BM7 monitor újkonfigurálása",
                 "description": "Alapvető eszköz konfigurációs paraméterek.",
                 "data": {
                     "state_algorithm": "Akkumulátor kiszámítási algoritmus",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Az új BM6 monitor konfigurációja",
+                "title": "Az új BM7 monitor konfigurációja",
                 "description": "Akkumulátor konfigurációs paraméterek.",
                 "data": {
                     "battery_voltage": "Akkumulátor feszültség",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "BM6 monitor konfigurációja",
+                "title": "BM7 monitor konfigurációja",
                 "description": "Egyéni akkumulátor konfigurációs paraméterek.",
                 "data": {
                     "custom_dvr_min": "Minimális kirakodási feszültség (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Akkumulátor kiszámítási algoritmus",
                         "state": {
-                            "by_device": "A BM6 eszköz által kiszámítva",
+                            "by_device": "A BM7 eszköz által kiszámítva",
                             "soc_sod": "A töltés/kisülés állapotából számolva (SOC/SOD)",
                             "cvr_dvr": "Számítva a töltés/kisülési feszültségben (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "A BM6 eszköz zárja le",
+                "by_device": "A BM7 eszköz zárja le",
                 "soc_sod": "Elfogadó a változás/küldési állapotból (SOC/SOD)",
                 "cvr_dvr": "ACCEPLE CHARCACTE/Elküldési idő (CVR/DVR)"
             }

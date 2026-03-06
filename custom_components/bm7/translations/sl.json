@@ -1,12 +1,12 @@
 {
-    "title": "BM6 monitor baterije",
+    "title": "BM7 monitor baterije",
     "config": {
         "step": {
             "user": {
-                "title": "Konfiguracija novega monitorja BM6",
+                "title": "Konfiguracija novega monitorja BM7",
                 "description": "Osnovni parametri konfiguracije naprave.",
                 "data": {
-                    "device_address": "Ime/naslov BM6",
+                    "device_address": "Ime/naslov BM7",
                     "state_algorithm": "Algoritem za izračun baterije",
                     "update_interval": "Interval posodobitve podatkov",
                     "voltage_offset": "Korekcija napetosti",
@@ -15,7 +15,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfiguracija novega monitorja BM6",
+                "title": "Konfiguracija novega monitorja BM7",
                 "description": "Parametri konfiguracije baterije.",
                 "data": {
                     "battery_voltage": "Napetost akumulatorja",
@@ -23,7 +23,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Konfiguracija monitorja BM6",
+                "title": "Konfiguracija monitorja BM7",
                 "description": "Parametri konfiguracije baterije po meri.",
                 "data": {
                     "custom_dvr_min": "Minimalna napetost za razkladanje (DVR)",
@@ -38,7 +38,7 @@
             }
         },
         "abort": {
-            "no_devices_found": "Naprave BM6 niso bile najdene."
+            "no_devices_found": "Naprave BM7 niso bile najdene."
         },
         "error": {
             "max_less_than_min": "Najvišja napetostna vrednost mora biti večja od minimalne.",
@@ -49,7 +49,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Ponovna konfiguracija monitorja BM6",
+                "title": "Ponovna konfiguracija monitorja BM7",
                 "description": "Osnovni parametri konfiguracije naprave.",
                 "data": {
                     "state_algorithm": "Algoritem za izračun baterije",
@@ -60,7 +60,7 @@
                 }
             },
             "custom_calculation": {
-                "title": "Konfiguracija novega monitorja BM6",
+                "title": "Konfiguracija novega monitorja BM7",
                 "description": "Parametri konfiguracije baterije.",
                 "data": {
                     "battery_voltage": "Napetost akumulatorja",
@@ -68,7 +68,7 @@
                 }
             },
             "custom_voltage": {
-                "title": "Konfiguracija monitorja BM6",
+                "title": "Konfiguracija monitorja BM7",
                 "description": "Parametri konfiguracije baterije po meri.",
                 "data": {
                     "custom_dvr_min": "Minimalna napetost za razkladanje (DVR)",
@@ -129,7 +129,7 @@
                     "state_algorithm": {
                         "name": "Algoritem za izračun baterije",
                         "state": {
-                            "by_device": "Izračunano s pomočjo naprave BM6",
+                            "by_device": "Izračunano s pomočjo naprave BM7",
                             "soc_sod": "Izračunano iz stanja naboja/odvajanja (SOC/SOD)",
                             "cvr_dvr": "Izračunano v napetosti polnjenja/praznjenja (CVR/DVR)"
                         }
@@ -221,7 +221,7 @@
         },
         "battery_state_algorithm": {
             "options": {
-                "by_device": "Zaprta z naprava BM6",
+                "by_device": "Zaprta z naprava BM7",
                 "soc_sod": "Acceptor iz države za spremembo/pošiljanje (SoC/SOD)",
                 "cvr_dvr": "ACCEPE Charaction/Čas pošiljanja (CVR/DVR)"
             }
