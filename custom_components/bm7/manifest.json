@@ -4,6 +4,10 @@
   "bluetooth": [
     {
       "connectable": true,
+      "local_name": "BM300*"
+    },
+    {
+      "connectable": true,
       "manufacturer_id": 76,
       "manufacturer_data_start": [ 2, 21, 59, 162, 156, 217, 164, 44, 137, 72, 86, 186, 218, 242, 96, 110, 247, 119, 17, 100, 0, 0, 205 ]
     },
