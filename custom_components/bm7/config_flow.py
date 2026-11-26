@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from enum import Enum
 from typing import TYPE_CHECKING, Any
+import fnmatch
 import json
 import logging
 from bluetooth_adapters import AdapterDetails
@@ -313,6 +314,11 @@ class BM7ConfigFlow(ConfigFlow, domain=DOMAIN):
         is_valid: bool = any(
             any(item.get("service_data_uuid") == uuid for item in bluetooth_config)
             for uuid in service_info.service_uuids
+        ) or any(
+            item.get("local_name")
+            and service_info.name
+            and fnmatch.fnmatchcase(service_info.name, item["local_name"])
+            for item in bluetooth_config
         ) or any(
             item.get("manufacturer_id")
             and item.get("manufacturer_data_start")
